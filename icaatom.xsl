@@ -27,9 +27,11 @@
 
   <xsl:template match="html:a" mode="foo">
     <fo:block text-align-last="justify">
-      <xsl:apply-templates select="document(@href)//html:h1"/>
-      <fo:leader leader-pattern="dots"/>
-      <fo:page-number-citation ref-id="{generate-id()}"/>
+      <fo:basic-link internal-destination="{generate-id()}">
+        <xsl:apply-templates select="document(@href)//html:h1"/>
+        <fo:leader leader-pattern="dots"/>
+        <fo:page-number-citation ref-id="{generate-id()}"/>
+      </fo:basic-link>
     </fo:block>
   </xsl:template>
 
