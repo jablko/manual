@@ -8,24 +8,36 @@
           <fo:region-body/>
         </fo:simple-page-master>
       </fo:layout-master-set>
+      <fo:bookmark-tree>
+        <xsl:apply-templates mode="aaa"/>
+      </fo:bookmark-tree>
       <fo:page-sequence master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
-            <xsl:apply-templates mode="foo"/>
+            <xsl:apply-templates mode="bbb"/>
           </fo:block>
         </fo:flow>
       </fo:page-sequence>
       <fo:page-sequence master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
-            <xsl:apply-templates mode="bar"/>
+            <xsl:apply-templates mode="ccc"/>
           </fo:block>
         </fo:flow>
       </fo:page-sequence>
     </fo:root>
   </xsl:template>
 
-  <xsl:template match="html:a" mode="foo">
+  <xsl:template match="html:li" mode="aaa">
+    <fo:bookmark internal-destination="{html:a/generate-id()}">
+      <fo:bookmark-title>
+        <xsl:apply-templates select="document(html:a/@href)//html:h1"/>
+      </fo:bookmark-title>
+      <xsl:apply-templates mode="aaa"/>
+    </fo:bookmark>
+  </xsl:template>
+
+  <xsl:template match="html:a" mode="bbb">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
         <xsl:apply-templates select="document(@href)//html:h1"/>
@@ -35,13 +47,13 @@
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="html:ol" mode="foo">
+  <xsl:template match="html:li" mode="bbb">
     <fo:block margin-left="1em">
-      <xsl:apply-templates mode="foo"/>
+      <xsl:apply-templates mode="bbb"/>
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="html:a" mode="bar">
+  <xsl:template match="html:a" mode="ccc">
     <fo:block id="{generate-id()}">
       <xsl:apply-templates select="document(@href)/id('content')"/>
     </fo:block>
