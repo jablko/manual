@@ -13,6 +13,16 @@
       </fo:bookmark-tree>
       <fo:page-sequence master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
+          <fo:block space-after="1in" space-before="1in" space-before.conditionality="retain">
+            <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
+          </fo:block>
+          <fo:block font-size="24pt" space-after="1in" space-before="1in" space-before.conditionality="retain" text-align="center">
+            User manual
+          </fo:block>
+        </fo:flow>
+      </fo:page-sequence>
+      <fo:page-sequence master-reference="all-pages">
+        <fo:flow flow-name="xsl-region-body">
           <fo:block>
             <xsl:apply-templates mode="bbb"/>
           </fo:block>
