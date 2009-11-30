@@ -33,7 +33,7 @@
         </fo:flow>
       </fo:page-sequence>
 
-      <fo:page-sequence master-reference="all-pages">
+      <fo:page-sequence initial-page-number="1" master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
             <xsl:apply-templates mode="ccc"/>
