@@ -3,14 +3,17 @@
 
   <xsl:template match="/">
     <fo:root>
+
       <fo:layout-master-set>
         <fo:simple-page-master master-name="all-pages">
           <fo:region-body/>
         </fo:simple-page-master>
       </fo:layout-master-set>
+
       <fo:bookmark-tree>
         <xsl:apply-templates mode="aaa"/>
       </fo:bookmark-tree>
+
       <fo:page-sequence master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
           <fo:block space-after="1in" space-before="1in" space-before.conditionality="retain">
@@ -21,6 +24,7 @@
           </fo:block>
         </fo:flow>
       </fo:page-sequence>
+
       <fo:page-sequence master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
@@ -28,6 +32,7 @@
           </fo:block>
         </fo:flow>
       </fo:page-sequence>
+
       <fo:page-sequence master-reference="all-pages">
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
@@ -35,6 +40,7 @@
           </fo:block>
         </fo:flow>
       </fo:page-sequence>
+
     </fo:root>
   </xsl:template>
 
