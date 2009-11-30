@@ -75,6 +75,18 @@
     </fo:basic-link>
   </xsl:template>
 
+  <xsl:template match="html:div[@class='thumb']">
+    <fo:block>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="html:div[@class='thumbcaption']">
+    <fo:block>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
   <xsl:template match="html:img">
     <fo:external-graphic src="url('{@src}')"/>
   </xsl:template>
