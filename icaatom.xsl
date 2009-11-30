@@ -37,6 +37,7 @@
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
         <fo:static-content flow-name="xsl-region-before">
           <fo:block>
+            <fo:retrieve-marker retrieve-class-name="heading"/>
             <fo:page-number/>
           </fo:block>
         </fo:static-content>
@@ -53,7 +54,7 @@
   <xsl:template match="html:li" mode="aaa">
     <fo:bookmark internal-destination="{html:a/generate-id()}">
       <fo:bookmark-title>
-        <xsl:apply-templates select="document(html:a/@href)//html:h1"/>
+        <xsl:apply-templates mode="aaa" select="document(html:a/@href)//html:h1"/>
       </fo:bookmark-title>
       <xsl:apply-templates mode="aaa"/>
     </fo:bookmark>
@@ -62,7 +63,7 @@
   <xsl:template match="html:a" mode="bbb">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates select="document(@href)//html:h1"/>
+        <xsl:apply-templates mode="aaa" select="document(@href)//html:h1"/>
         <fo:leader leader-pattern="dots"/>
         <fo:page-number-citation ref-id="{generate-id()}"/>
       </fo:basic-link>
@@ -97,6 +98,12 @@
     <fo:block>
       <xsl:apply-templates/>
     </fo:block>
+  </xsl:template>
+
+  <xsl:template match="html:h1">
+    <fo:marker marker-class-name="heading">
+      <xsl:apply-templates/>
+    </fo:marker>
   </xsl:template>
 
   <xsl:template match="html:img">
