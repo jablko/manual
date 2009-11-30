@@ -7,6 +7,7 @@
       <fo:layout-master-set>
         <fo:simple-page-master master-name="all-pages">
           <fo:region-body/>
+          <fo:region-before/>
         </fo:simple-page-master>
       </fo:layout-master-set>
 
@@ -34,6 +35,11 @@
       </fo:page-sequence>
 
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
+        <fo:static-content flow-name="xsl-region-before">
+          <fo:block>
+            <fo:page-number/>
+          </fo:block>
+        </fo:static-content>
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
             <xsl:apply-templates mode="ccc"/>
