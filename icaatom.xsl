@@ -8,6 +8,7 @@
         <fo:simple-page-master margin=".5in 1in" master-name="all-pages">
           <fo:region-body/>
           <fo:region-before/>
+          <fo:region-after/>
         </fo:simple-page-master>
       </fo:layout-master-set>
 
@@ -39,6 +40,11 @@
           <fo:block>
             <fo:retrieve-marker retrieve-class-name="heading"/>
             <fo:page-number/>
+          </fo:block>
+        </fo:static-content>
+        <fo:static-content flow-name="xsl-region-after">
+          <fo:block>
+            <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
           </fo:block>
         </fo:static-content>
         <fo:flow flow-name="xsl-region-body">
