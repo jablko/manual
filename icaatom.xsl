@@ -7,8 +7,8 @@
       <fo:layout-master-set>
         <fo:simple-page-master margin=".5in 1in" master-name="all-pages">
           <fo:region-body margin=".5in 0"/>
-          <fo:region-before extent=".5in"/>
-          <fo:region-after extent=".5in"/>
+          <fo:region-before/>
+          <fo:region-after display-align="after"/>
         </fo:simple-page-master>
       </fo:layout-master-set>
 
