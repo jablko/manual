@@ -76,17 +76,28 @@
   <xsl:template match="html:a" mode="bbb">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates mode="aaa" select="document(@href)//html:h1"/>
-        <fo:leader leader-pattern="dots"/>
-        <fo:page-number-citation ref-id="{generate-id()}"/>
+        <xsl:apply-templates mode="aaa" select="document(@href)//html:h1"/><fo:leader leader-pattern="dots"/><fo:page-number-citation ref-id="{generate-id()}"/>
       </fo:basic-link>
     </fo:block>
   </xsl:template>
 
   <xsl:template match="html:li" mode="bbb">
-    <fo:block margin-left="1em">
+    <fo:list-item>
+      <fo:list-item-label>
+        <fo:block>
+          1.
+        </fo:block>
+      </fo:list-item-label>
+      <fo:list-item-body start-indent="body-start()">
+        <xsl:apply-templates mode="bbb"/>
+      </fo:list-item-body>
+    </fo:list-item>
+  </xsl:template>
+
+  <xsl:template match="html:ol" mode="bbb">
+    <fo:list-block>
       <xsl:apply-templates mode="bbb"/>
-    </fo:block>
+    </fo:list-block>
   </xsl:template>
 
   <xsl:template match="html:a" mode="ccc">
