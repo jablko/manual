@@ -17,6 +17,7 @@
       </fo:bookmark-tree>
 
       <fo:page-sequence format="i" master-reference="all-pages">
+
         <fo:flow flow-name="xsl-region-body">
           <fo:block space-after="1in" space-before="1in" space-before.conditionality="retain">
             <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
@@ -25,33 +26,40 @@
             User manual
           </fo:block>
         </fo:flow>
+
       </fo:page-sequence>
 
       <fo:page-sequence format="i" master-reference="all-pages">
+
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
             <xsl:apply-templates mode="bbb"/>
           </fo:block>
         </fo:flow>
+
       </fo:page-sequence>
 
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
+
         <fo:static-content flow-name="xsl-region-before">
           <fo:block>
             <fo:retrieve-marker retrieve-class-name="heading"/>
             <fo:page-number/>
           </fo:block>
         </fo:static-content>
+
         <fo:static-content flow-name="xsl-region-after">
           <fo:block color="gray" font-family="serif" text-align-last="justify">
             <fo:external-graphic content-height="12pt" src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/><fo:leader/>Brought to you by <fo:external-graphic content-height="12pt" src="url('http://artefactual.com/images/logo.png')"/>
           </fo:block>
         </fo:static-content>
+
         <fo:flow flow-name="xsl-region-body">
           <fo:block>
             <xsl:apply-templates mode="ccc"/>
           </fo:block>
         </fo:flow>
+
       </fo:page-sequence>
 
     </fo:root>
