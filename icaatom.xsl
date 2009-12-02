@@ -32,9 +32,9 @@
       <fo:page-sequence format="i" master-reference="all-pages">
 
         <fo:flow flow-name="xsl-region-body">
-          <fo:block>
+          <fo:list-block>
             <xsl:apply-templates mode="bbb"/>
-          </fo:block>
+          </fo:list-block>
         </fo:flow>
 
       </fo:page-sequence>
@@ -76,16 +76,16 @@
   <xsl:template match="html:a" mode="bbb">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates mode="aaa" select="document(@href)//html:h1"/><fo:leader leader-pattern="dots"/><fo:page-number-citation ref-id="{generate-id()}"/>
+        <xsl:apply-templates mode="aaa" select="document(@href)//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
       </fo:basic-link>
     </fo:block>
   </xsl:template>
 
   <xsl:template match="html:li" mode="bbb">
-    <fo:list-item>
+    <fo:list-item font-weight="bold" leader-pattern="dots" space-after="1em">
       <fo:list-item-label>
         <fo:block>
-          1.
+          <xsl:number format="1."/>
         </fo:block>
       </fo:list-item-label>
       <fo:list-item-body start-indent="body-start()">
@@ -94,10 +94,11 @@
     </fo:list-item>
   </xsl:template>
 
-  <xsl:template match="html:ol" mode="bbb">
-    <fo:list-block>
+  <xsl:template match="html:li//html:li" mode="bbb">
+    <!-- TODO Use fo:wrapper, https://issues.apache.org/bugzilla/show_bug.cgi?id=47530 -->
+    <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
       <xsl:apply-templates mode="bbb"/>
-    </fo:list-block>
+    </fo:block>
   </xsl:template>
 
   <xsl:template match="html:a" mode="ccc">
