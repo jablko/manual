@@ -43,8 +43,8 @@
           </fo:block>
         </fo:static-content>
         <fo:static-content flow-name="xsl-region-after">
-          <fo:block>
-            <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
+          <fo:block color="gray" font-family="serif" text-align-last="justify">
+            <fo:external-graphic content-height="12pt" src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/><fo:leader/>Brought to you by <fo:external-graphic content-height="12pt" src="url('http://artefactual.com/images/logo.png')"/>
           </fo:block>
         </fo:static-content>
         <fo:flow flow-name="xsl-region-body">
