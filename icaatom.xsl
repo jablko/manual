@@ -113,7 +113,7 @@
   </xsl:template>
 
   <xsl:template match="html:img">
-    <fo:external-graphic src="url('{@src}')"/>
+    <fo:external-graphic src="url('{resolve-uri(@src, base-uri())}')"/>
   </xsl:template>
 
 </xsl:stylesheet>
