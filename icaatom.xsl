@@ -88,6 +88,10 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="html:a[@class='image']" priority="1">
+    <fo:external-graphic src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
+  </xsl:template>
+
   <xsl:template match="html:a[@href]">
     <fo:basic-link external-destination="{@href}">
       <xsl:apply-templates/>
