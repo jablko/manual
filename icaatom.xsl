@@ -5,7 +5,7 @@
     <fo:root>
 
       <fo:layout-master-set>
-        <fo:simple-page-master master-name="all-pages">
+        <fo:simple-page-master margin=".5in 1in" master-name="all-pages">
           <fo:region-body/>
           <fo:region-before/>
         </fo:simple-page-master>
