@@ -43,8 +43,7 @@
 
         <fo:static-content flow-name="xsl-region-before">
           <fo:block>
-            <fo:retrieve-marker retrieve-class-name="heading"/>
-            <fo:page-number/>
+            <fo:retrieve-marker retrieve-class-name="heading"/><fo:leader/><fo:page-number/>
           </fo:block>
         </fo:static-content>
 
