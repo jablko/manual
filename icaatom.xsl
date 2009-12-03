@@ -139,4 +139,10 @@
     <fo:external-graphic src="url('{resolve-uri(@src, base-uri())}')"/>
   </xsl:template>
 
+  <xsl:template match="html:p">
+    <fo:block space-after=".5em" space-before=".5em">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
 </xsl:stylesheet>
