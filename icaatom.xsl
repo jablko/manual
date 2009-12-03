@@ -107,7 +107,7 @@
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="html:a[@class='image']" priority="1">
+  <xsl:template match="html:a[contains(concat(' ', @class, ' '), ' image ')]" priority="1">
     <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
   </xsl:template>
 
@@ -117,13 +117,13 @@
     </fo:basic-link>
   </xsl:template>
 
-  <xsl:template match="html:div[@class='thumb']">
+  <xsl:template match="html:div[contains(concat(' ', @class, ' '), ' thumb ')]">
     <fo:block>
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="html:div[@class='thumbcaption']">
+  <xsl:template match="html:div[contains(concat(' ', @class, ' '), ' thumbcaption ')]">
     <fo:block>
       <xsl:apply-templates/>
     </fo:block>
