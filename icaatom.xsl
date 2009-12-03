@@ -107,14 +107,14 @@
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="html:a[contains(concat(' ', @class, ' '), ' image ')]" priority="1">
-    <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
-  </xsl:template>
-
   <xsl:template match="html:a[@href]">
     <fo:basic-link external-destination="{@href}">
       <xsl:apply-templates/>
     </fo:basic-link>
+  </xsl:template>
+
+  <xsl:template match="html:a[contains(concat(' ', @class, ' '), ' image ')]" priority="1">
+    <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
   </xsl:template>
 
   <xsl:template match="html:div[contains(concat(' ', @class, ' '), ' thumb ')]">
