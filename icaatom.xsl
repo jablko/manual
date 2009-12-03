@@ -131,8 +131,16 @@
 
   <xsl:template match="html:h1">
     <fo:marker marker-class-name="heading">
-      <xsl:apply-templates/>
+      Chapter <xsl:number/>: <xsl:apply-templates/>
     </fo:marker>
+    <fo:block space-after="1in" space-before="1in" space-before.conditionality="retain">
+      <fo:block font-size="14pt">
+        Chapter <xsl:number/>
+      </fo:block>
+      <fo:block font-size="24pt">
+        <xsl:apply-templates/>
+      </fo:block>
+    </fo:block>
   </xsl:template>
 
   <xsl:template match="html:img">
