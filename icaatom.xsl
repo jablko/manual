@@ -19,10 +19,10 @@
       <fo:page-sequence format="i" master-reference="all-pages">
 
         <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
-          <fo:block space-after="1in">
+          <fo:block>
             <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
           </fo:block>
-          <fo:block>
+          <fo:block space-after="1in" space-before="1in">
             User manual
           </fo:block>
         </fo:flow>
@@ -82,10 +82,10 @@
   </xsl:template>
 
   <xsl:template match="html:li" mode="bbb">
-    <fo:list-item font-weight="bold" leader-pattern="dots" space-after="1em">
+    <fo:list-item font-weight="bold" leader-pattern="dots" space-after="1em" space-before="1em">
       <fo:list-item-label>
         <fo:block>
-          <xsl:number format="1."/>
+          <xsl:number/>.
         </fo:block>
       </fo:list-item-label>
       <fo:list-item-body start-indent="body-start()">
