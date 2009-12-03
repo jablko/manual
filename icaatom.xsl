@@ -76,7 +76,7 @@
   <xsl:template match="html:a" mode="bbb">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates mode="aaa" select="document(@href)//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+        <xsl:apply-templates mode="bbb" select="document(@href)//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
       </fo:basic-link>
     </fo:block>
   </xsl:template>
