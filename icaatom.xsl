@@ -137,10 +137,22 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="id('jump-to-nav')">
+  </xsl:template>
+
+  <xsl:template match="id('siteSub')">
+  </xsl:template>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
     <fo:block>
       <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
     </fo:block>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' magnify ')]">
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' printfooter ')]">
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumb ')]">
