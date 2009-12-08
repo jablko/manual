@@ -113,25 +113,6 @@
     </fo:basic-link>
   </xsl:template>
 
-  <xsl:template match="html:a[contains(concat(' ', @class, ' '), ' image ')]" priority="1">
-    <fo:block>
-      <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
-    </fo:block>
-  </xsl:template>
-
-  <xsl:template match="html:div[contains(concat(' ', @class, ' '), ' thumb ')]">
-    <!-- TODO Use fo:float, http://wiki.apache.org/xmlgraphics-fop/GoogleSummerOfCode2006/FloatsImplementationProgress/ImplementingSideFloats -->
-    <fo:block>
-      <xsl:apply-templates/>
-    </fo:block>
-  </xsl:template>
-
-  <xsl:template match="html:div[contains(concat(' ', @class, ' '), ' thumbcaption ')]">
-    <fo:block>
-      <xsl:apply-templates/>
-    </fo:block>
-  </xsl:template>
-
   <xsl:template match="html:h1">
     <fo:marker marker-class-name="heading">
       Chapter <xsl:number/>: <xsl:apply-templates/>
@@ -152,6 +133,25 @@
 
   <xsl:template match="html:p">
     <fo:block space-after=".5em" space-before=".5em">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
+    <fo:block>
+      <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumb ')]">
+    <!-- TODO Use fo:float, http://wiki.apache.org/xmlgraphics-fop/GoogleSummerOfCode2006/FloatsImplementationProgress/ImplementingSideFloats -->
+    <fo:block>
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumbcaption ')]">
+    <fo:block>
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
