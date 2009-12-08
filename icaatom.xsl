@@ -139,6 +139,27 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="html:ul">
+    <fo:list-block space-after=".5em" space-before=".5em">
+      <xsl:apply-templates/>
+    </fo:list-block>
+  </xsl:template>
+
+  <xsl:template match="html:ul//html:li">
+    <fo:list-item>
+      <fo:list-item-label start-indent="1em">
+        <fo:block>
+          &#x2022;
+        </fo:block>
+      </fo:list-item-label>
+      <fo:list-item-body end-indent="2em" start-indent="2em">
+        <fo:block>
+          <xsl:apply-templates/>
+        </fo:block>
+      </fo:list-item-body>
+    </fo:list-item>
+  </xsl:template>
+
   <xsl:template match="id('jump-to-nav')">
   </xsl:template>
 
