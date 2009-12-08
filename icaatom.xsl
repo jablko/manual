@@ -82,14 +82,16 @@
   </xsl:template>
 
   <xsl:template match="html:li" mode="bbb">
-    <fo:list-item font-weight="bold" leader-pattern="dots" space-after="1em" space-before="1em">
-      <fo:list-item-label>
+    <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
+      <fo:list-item-label start-indent="1em">
         <fo:block>
           <xsl:number/>.
         </fo:block>
       </fo:list-item-label>
-      <fo:list-item-body start-indent="body-start()">
-        <xsl:apply-templates mode="bbb"/>
+      <fo:list-item-body end-indent="2em" start-indent="2em">
+        <fo:block>
+          <xsl:apply-templates mode="bbb"/>
+        </fo:block>
       </fo:list-item-body>
     </fo:list-item>
   </xsl:template>
