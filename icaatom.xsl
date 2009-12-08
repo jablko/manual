@@ -145,14 +145,14 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumb ')]">
     <!-- TODO Use fo:float, http://wiki.apache.org/xmlgraphics-fop/GoogleSummerOfCode2006/FloatsImplementationProgress/ImplementingSideFloats -->
-    <fo:block>
+    <fo:block space-after="1em" space-before="1em">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumbcaption ')]">
-    <fo:block>
-      <xsl:apply-templates/>
+    <fo:block font-style="italic">
+      Figure <xsl:number/>. <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
 
