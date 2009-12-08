@@ -159,7 +159,7 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumb ')]">
     <!-- TODO Use fo:float, http://wiki.apache.org/xmlgraphics-fop/GoogleSummerOfCode2006/FloatsImplementationProgress/ImplementingSideFloats -->
-    <fo:block space-after="1em" space-before="1em">
+    <fo:block keep-together="always" space-after="1em" space-before="1em">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
