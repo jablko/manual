@@ -19,6 +19,12 @@
     </xsl:attribute>
   </xsl:template>
 
+  <xsl:template match="@href">
+    <xsl:attribute name="href">
+      <xsl:value-of select="resolve-uri(., base-uri())"/>
+    </xsl:attribute>
+  </xsl:template>
+
   <xsl:template match="html:a" mode="aaa">
     <xsl:apply-templates select="document(@href)/id('content')"/>
   </xsl:template>
