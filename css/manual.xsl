@@ -13,6 +13,12 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]//html:img/@src">
+    <xsl:attribute name="src">
+      <xsl:value-of select="resolve-uri(document(ancestor::*[contains(concat(' ', @class, ' '), ' image ')]/@href)/id('file')//html:img/@src, resolve-uri(ancestor::*[contains(concat(' ', @class, ' '), ' image ')]/@href, base-uri()))"/>
+    </xsl:attribute>
+  </xsl:template>
+
   <xsl:template match="html:a" mode="aaa">
     <xsl:apply-templates select="document(@href)/id('content')"/>
   </xsl:template>
