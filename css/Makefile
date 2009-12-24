@@ -1,6 +1,6 @@
 all: manual.pdf
 
-manual.pdf: manual.html
+manual.pdf: manual.css manual.html
 	../prince-7.0-linux/lib/prince/bin/prince manual.html
 
 manual.html: ../manual.html manual.xsl
