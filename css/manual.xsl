@@ -7,11 +7,13 @@
     </xsl:copy>
   </xsl:template>
 
+<!--
   <xsl:template match="html:body">
     <xsl:copy>
       <xsl:apply-templates mode="aaa" select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
+-->
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]//html:img/@src">
     <xsl:attribute name="src">

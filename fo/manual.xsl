@@ -55,7 +55,7 @@
 
         <fo:flow flow-name="xsl-region-body" font-family="serif" text-align="justify">
           <fo:block>
-            <xsl:apply-templates mode="ccc"/>
+            <xsl:apply-templates/>
           </fo:block>
         </fo:flow>
 
@@ -64,15 +64,16 @@
     </fo:root>
   </xsl:template>
 
-  <xsl:template match="html:li" mode="aaa">
-    <fo:bookmark internal-destination="{html:a/generate-id()}">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="aaa">
+    <fo:bookmark internal-destination="{generate-id()}">
       <fo:bookmark-title>
-        <xsl:apply-templates mode="aaa" select="document(html:a/@href)//html:h1"/>
+        <xsl:apply-templates mode="aaa" select=".//html:h1"/>
       </fo:bookmark-title>
       <xsl:apply-templates mode="aaa"/>
     </fo:bookmark>
   </xsl:template>
 
+<!--
   <xsl:template match="html:a" mode="bbb">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
@@ -80,8 +81,9 @@
       </fo:basic-link>
     </fo:block>
   </xsl:template>
+-->
 
-  <xsl:template match="html:li" mode="bbb">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
     <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
       <fo:list-item-label start-indent="1em">
         <fo:block>
@@ -96,7 +98,7 @@
     </fo:list-item>
   </xsl:template>
 
-  <xsl:template match="html:li//html:li" mode="bbb">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
     <!-- TODO Use fo:wrapper, https://issues.apache.org/bugzilla/show_bug.cgi?id=47530 -->
     <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
       <xsl:apply-templates mode="bbb"/>
@@ -115,6 +117,7 @@
     </fo:basic-link>
   </xsl:template>
 
+<!--
   <xsl:template match="html:h1">
     <fo:marker marker-class-name="heading">
       Chapter <xsl:number/>: <xsl:apply-templates/>
@@ -128,6 +131,7 @@
       </fo:block>
     </fo:block>
   </xsl:template>
+-->
 
   <xsl:template match="html:img">
     <fo:external-graphic src="url('{resolve-uri(@src, base-uri())}')"/>
