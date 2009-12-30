@@ -23,7 +23,7 @@
             <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
           </fo:block>
           <fo:block space-after="1in" space-before="1in">
-            User manual
+            User's Manual
           </fo:block>
         </fo:flow>
 
