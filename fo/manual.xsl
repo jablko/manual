@@ -16,16 +16,6 @@
         <xsl:apply-templates mode="aaa"/>
       </fo:bookmark-tree>
 
-      <fo:page-sequence format="i" master-reference="all-pages">
-
-        <fo:flow flow-name="xsl-region-body">
-          <fo:list-block>
-            <xsl:apply-templates mode="bbb"/>
-          </fo:list-block>
-        </fo:flow>
-
-      </fo:page-sequence>
-
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
 
         <fo:static-content flow-name="xsl-region-before" font-family="serif" text-align-last="justify">
@@ -111,6 +101,7 @@
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]">
+
     <fo:page-sequence format="i" master-reference="all-pages">
 
       <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
@@ -118,6 +109,17 @@
       </fo:flow>
 
     </fo:page-sequence>
+
+    <fo:page-sequence format="i" master-reference="all-pages">
+
+      <fo:flow flow-name="xsl-region-body">
+        <fo:list-block>
+          <xsl:apply-templates mode="bbb" select="/"/>
+        </fo:list-block>
+      </fo:flow>
+
+    </fo:page-sequence>
+
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">

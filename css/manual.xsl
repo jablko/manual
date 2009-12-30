@@ -7,16 +7,16 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="html:body">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]">
+
     <xsl:copy>
-
-      <html:ol>
-        <xsl:apply-templates mode="aaa"/>
-      </html:ol>
-
       <xsl:apply-templates select="@*|node()"/>
-
     </xsl:copy>
+
+    <html:ol>
+      <xsl:apply-templates mode="aaa" select="/"/>
+    </html:ol>
+
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]//html:img/@src">
