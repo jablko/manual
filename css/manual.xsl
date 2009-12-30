@@ -38,7 +38,7 @@
       </html:a>
       <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
         <html:ol>
-          <xsl:apply-templates mode="aaa"/>
+          <xsl:apply-templates mode="aaa" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
         </html:ol>
       </xsl:if>
     </html:li>
