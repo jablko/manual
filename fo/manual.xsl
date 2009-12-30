@@ -103,12 +103,6 @@
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="html:a" mode="ccc">
-    <fo:block id="{generate-id()}">
-      <xsl:apply-templates select="document(@href)/id('content')"/>
-    </fo:block>
-  </xsl:template>
-
   <xsl:template match="html:a[@href]">
     <fo:basic-link external-destination="{@href}">
       <xsl:apply-templates/>
