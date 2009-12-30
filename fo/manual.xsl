@@ -16,6 +16,18 @@
         <xsl:apply-templates mode="bookmark-tree"/>
       </fo:bookmark-tree>
 
+      <xsl:apply-templates mode="front-cover"/>
+
+      <fo:page-sequence format="i" master-reference="all-pages">
+
+        <fo:flow flow-name="xsl-region-body">
+          <fo:list-block>
+            <xsl:apply-templates mode="table-of-contents"/>
+          </fo:list-block>
+        </fo:flow>
+
+      </fo:page-sequence>
+
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
 
         <fo:static-content flow-name="xsl-region-before" font-family="serif" text-align-last="justify">
@@ -101,25 +113,6 @@
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]">
-
-    <fo:page-sequence format="i" master-reference="all-pages">
-
-      <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
-        <xsl:apply-templates/>
-      </fo:flow>
-
-    </fo:page-sequence>
-
-    <fo:page-sequence format="i" master-reference="all-pages">
-
-      <fo:flow flow-name="xsl-region-body">
-        <fo:list-block>
-          <xsl:apply-templates mode="table-of-contents" select="/"/>
-        </fo:list-block>
-      </fo:flow>
-
-    </fo:page-sequence>
-
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
@@ -160,6 +153,23 @@
       </fo:bookmark-title>
       <xsl:apply-templates mode="bookmark-tree"/>
     </fo:bookmark>
+  </xsl:template>
+
+  <xsl:template match="text()" mode="front-cover">
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="front-cover">
+
+    <fo:page-sequence format="i" master-reference="all-pages">
+
+      <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
+        <fo:block>
+          <xsl:apply-templates/>
+        </fo:block>
+      </fo:flow>
+
+    </fo:page-sequence>
+
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
