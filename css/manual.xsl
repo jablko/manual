@@ -25,6 +25,18 @@
     </xsl:attribute>
   </xsl:template>
 
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]">
+    <xsl:copy>
+
+      <xsl:attribute name="id">
+        <xsl:value-of select="generate-id()"/>
+      </xsl:attribute>
+
+      <xsl:apply-templates select="@*|node()"/>
+
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="@href">
     <xsl:attribute name="href">
       <xsl:value-of select="resolve-uri(., base-uri())"/>
