@@ -75,6 +75,8 @@
 
   <xsl:template match="text()" mode="table-of-contents.heading"/>
 
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents.heading"/>
+
   <xsl:template match="html:h1" mode="table-of-contents.heading">
     <xsl:apply-templates/>
   </xsl:template>
