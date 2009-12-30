@@ -7,13 +7,17 @@
     </xsl:copy>
   </xsl:template>
 
-<!--
   <xsl:template match="html:body">
     <xsl:copy>
-      <xsl:apply-templates mode="aaa" select="@*|node()"/>
+
+      <html:ol>
+        <xsl:apply-templates mode="aaa"/>
+      </html:ol>
+
+      <xsl:apply-templates select="@*|node()"/>
+
     </xsl:copy>
   </xsl:template>
--->
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]//html:img/@src">
     <xsl:attribute name="src">
@@ -27,8 +31,17 @@
     </xsl:attribute>
   </xsl:template>
 
-  <xsl:template match="html:a" mode="aaa">
-    <xsl:apply-templates select="document(@href)/id('content')"/>
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="aaa">
+    <html:li>
+      <html:a href="#{generate-id()}">
+        <xsl:apply-templates mode="aaa" select=".//html:h1"/>
+      </html:a>
+      <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
+        <html:ol>
+          <xsl:apply-templates mode="aaa"/>
+        </html:ol>
+      </xsl:if>
+    </html:li>
   </xsl:template>
 
 </xsl:stylesheet>
