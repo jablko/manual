@@ -143,6 +143,8 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="text()" mode="bookmark-tree"/>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
       <fo:bookmark-title>
@@ -167,6 +169,8 @@
     </fo:page-sequence>
 
   </xsl:template>
+
+  <xsl:template match="text()" mode="table-of-contents"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">

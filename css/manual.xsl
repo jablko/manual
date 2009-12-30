@@ -49,6 +49,8 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="text()" mode="table-of-contents"/>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' main ')]" mode="table-of-contents">
     <html:ol>
       <xsl:apply-templates mode="table-of-contents"/>
