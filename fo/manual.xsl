@@ -108,14 +108,11 @@
     </fo:list-item>
   </xsl:template>
 
-  <xsl:template match="id('jump-to-nav')">
-  </xsl:template>
+  <xsl:template match="id('jump-to-nav')"/>
 
-  <xsl:template match="id('siteSub')">
-  </xsl:template>
+  <xsl:template match="id('siteSub')"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]">
-  </xsl:template>
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
     <fo:block>
@@ -123,11 +120,9 @@
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' magnify ')]">
-  </xsl:template>
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' magnify ')]"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' printfooter ')]">
-  </xsl:template>
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' printfooter ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]">
     <fo:block id="{generate-id()}">
@@ -157,8 +152,7 @@
     </fo:bookmark>
   </xsl:template>
 
-  <xsl:template match="text()" mode="front-cover">
-  </xsl:template>
+  <xsl:template match="text()" mode="front-cover"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="front-cover">
 
