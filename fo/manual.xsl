@@ -16,15 +16,7 @@
         <xsl:apply-templates mode="bookmark-tree"/>
       </fo:bookmark-tree>
 
-      <fo:page-sequence format="i" master-reference="all-pages">
-
-        <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
-          <fo:block>
-            <xsl:apply-templates mode="front-cover"/>
-          </fo:block>
-        </fo:flow>
-
-      </fo:page-sequence>
+      <xsl:apply-templates mode="front-cover"/>
 
       <fo:page-sequence format="i" master-reference="all-pages">
 
@@ -168,7 +160,15 @@
   <xsl:template match="text()" mode="front-cover"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="front-cover">
-    <xsl:apply-templates/>
+    <fo:page-sequence format="i" master-reference="all-pages">
+
+      <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
+        <fo:block>
+          <xsl:apply-templates/>
+        </fo:block>
+      </fo:flow>
+
+    </fo:page-sequence>
   </xsl:template>
 
   <xsl:template match="text()" mode="table-of-contents"/>
