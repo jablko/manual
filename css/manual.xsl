@@ -45,14 +45,17 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <html:li>
+
       <html:a href="#{generate-id()}">
         <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/>
       </html:a>
+
       <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
         <html:ol>
           <xsl:apply-templates mode="table-of-contents" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
         </html:ol>
       </xsl:if>
+
     </html:li>
   </xsl:template>
 
