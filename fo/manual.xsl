@@ -64,45 +64,6 @@
     </fo:root>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="aaa">
-    <fo:bookmark internal-destination="{generate-id()}">
-      <fo:bookmark-title>
-        <xsl:apply-templates mode="aaa" select=".//html:h1"/>
-      </fo:bookmark-title>
-      <xsl:apply-templates mode="aaa"/>
-    </fo:bookmark>
-  </xsl:template>
-
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
-    <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
-      <fo:list-item-label start-indent="1em">
-        <fo:block>
-          <xsl:number/>.
-        </fo:block>
-      </fo:list-item-label>
-      <fo:list-item-body end-indent="2em" start-indent="2em">
-        <fo:block>
-          <fo:block text-align-last="justify">
-            <fo:basic-link internal-destination="{generate-id()}">
-              <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
-            </fo:basic-link>
-          </fo:block>
-          <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
-            <xsl:apply-templates mode="bbb" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
-          </fo:block>
-        </fo:block>
-      </fo:list-item-body>
-    </fo:list-item>
-  </xsl:template>
-
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
-    <fo:block text-align-last="justify">
-      <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
-      </fo:basic-link>
-    </fo:block>
-  </xsl:template>
-
   <xsl:template match="html:a[@href]">
     <fo:basic-link external-destination="{@href}">
       <xsl:apply-templates/>
@@ -184,6 +145,45 @@
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumbcaption ')]">
     <fo:block font-style="italic">
       Figure <xsl:number/>. <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="aaa">
+    <fo:bookmark internal-destination="{generate-id()}">
+      <fo:bookmark-title>
+        <xsl:apply-templates mode="aaa" select=".//html:h1"/>
+      </fo:bookmark-title>
+      <xsl:apply-templates mode="aaa"/>
+    </fo:bookmark>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
+    <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
+      <fo:list-item-label start-indent="1em">
+        <fo:block>
+          <xsl:number/>.
+        </fo:block>
+      </fo:list-item-label>
+      <fo:list-item-body end-indent="2em" start-indent="2em">
+        <fo:block>
+          <fo:block text-align-last="justify">
+            <fo:basic-link internal-destination="{generate-id()}">
+              <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+            </fo:basic-link>
+          </fo:block>
+          <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
+            <xsl:apply-templates mode="bbb" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
+          </fo:block>
+        </fo:block>
+      </fo:list-item-body>
+    </fo:list-item>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
+    <fo:block text-align-last="justify">
+      <fo:basic-link internal-destination="{generate-id()}">
+        <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+      </fo:basic-link>
     </fo:block>
   </xsl:template>
 
