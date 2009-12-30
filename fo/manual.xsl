@@ -114,7 +114,7 @@
 
       <fo:flow flow-name="xsl-region-body">
         <fo:list-block>
-          <xsl:apply-templates mode="bbb" select="/"/>
+          <xsl:apply-templates mode="table-of-contents" select="/"/>
         </fo:list-block>
       </fo:flow>
 
@@ -162,7 +162,7 @@
     </fo:bookmark>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
       <fo:list-item-label start-indent="1em">
         <fo:block>
@@ -173,21 +173,21 @@
         <fo:block>
           <fo:block text-align-last="justify">
             <fo:basic-link internal-destination="{generate-id()}">
-              <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+              <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
             </fo:basic-link>
           </fo:block>
           <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
-            <xsl:apply-templates mode="bbb" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
+            <xsl:apply-templates mode="table-of-contents" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
           </fo:block>
         </fo:block>
       </fo:list-item-body>
     </fo:list-item>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+        <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
       </fo:basic-link>
     </fo:block>
   </xsl:template>

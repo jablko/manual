@@ -14,7 +14,7 @@
     </xsl:copy>
 
     <html:ol>
-      <xsl:apply-templates mode="aaa" select="/"/>
+      <xsl:apply-templates mode="table-of-contents" select="/"/>
     </html:ol>
 
   </xsl:template>
@@ -43,14 +43,14 @@
     </xsl:attribute>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="aaa">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <html:li>
       <html:a href="#{generate-id()}">
-        <xsl:apply-templates mode="aaa" select=".//html:h1"/>
+        <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/>
       </html:a>
       <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
         <html:ol>
-          <xsl:apply-templates mode="aaa" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
+          <xsl:apply-templates mode="table-of-contents" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
         </html:ol>
       </xsl:if>
     </html:li>
