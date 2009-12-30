@@ -12,9 +12,11 @@
 
       <xsl:apply-templates mode="front-cover"/>
 
-      <html:ol>
-        <xsl:apply-templates mode="table-of-contents"/>
-      </html:ol>
+      <html:div class="table-of-contents">
+        <html:ol>
+          <xsl:apply-templates mode="table-of-contents"/>
+        </html:ol>
+      </html:div>
 
       <xsl:apply-templates select="@*|node()"/>
 

@@ -11,3 +11,8 @@
   font-size: 24pt;
   text-align: center;
 }
+
+.table-of-contents a::after
+{
+  content: leader('.') target-counter(attr(href), page);
+}
