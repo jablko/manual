@@ -145,11 +145,14 @@
 
   <xsl:template match="text()" mode="bookmark-tree"/>
 
+  <xsl:template match="html:h1" mode="bookmark-tree">
+    <fo:bookmark-title>
+      <xsl:apply-templates/>
+    </fo:bookmark-title>
+  </xsl:template>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
-      <fo:bookmark-title>
-        <xsl:apply-templates mode="bookmark-tree" select=".//html:h1"/>
-      </fo:bookmark-title>
       <xsl:apply-templates mode="bookmark-tree"/>
     </fo:bookmark>
   </xsl:template>
