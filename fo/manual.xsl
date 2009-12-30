@@ -13,7 +13,7 @@
       </fo:layout-master-set>
 
       <fo:bookmark-tree>
-        <xsl:apply-templates mode="aaa"/>
+        <xsl:apply-templates mode="bookmark-tree"/>
       </fo:bookmark-tree>
 
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
@@ -153,12 +153,12 @@
     </fo:block>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="aaa">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
       <fo:bookmark-title>
-        <xsl:apply-templates mode="aaa" select=".//html:h1"/>
+        <xsl:apply-templates mode="bookmark-tree" select=".//html:h1"/>
       </fo:bookmark-title>
-      <xsl:apply-templates mode="aaa"/>
+      <xsl:apply-templates mode="bookmark-tree"/>
     </fo:bookmark>
   </xsl:template>
 
