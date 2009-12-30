@@ -135,6 +135,12 @@
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' printfooter ')]">
   </xsl:template>
 
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]">
+    <fo:block id="{generate-id()}">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumb ')]">
     <!-- TODO Use fo:float, http://wiki.apache.org/xmlgraphics-fop/GoogleSummerOfCode2006/FloatsImplementationProgress/ImplementingSideFloats -->
     <fo:block keep-together="always" space-after="1em" space-before="1em">
