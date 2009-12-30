@@ -18,19 +18,6 @@
 
       <fo:page-sequence format="i" master-reference="all-pages">
 
-        <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
-          <fo:block>
-            <fo:external-graphic src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/>
-          </fo:block>
-          <fo:block space-after="1in" space-before="1in">
-            User's Manual
-          </fo:block>
-        </fo:flow>
-
-      </fo:page-sequence>
-
-      <fo:page-sequence format="i" master-reference="all-pages">
-
         <fo:flow flow-name="xsl-region-body">
           <fo:list-block>
             <xsl:apply-templates mode="bbb"/>
@@ -121,6 +108,16 @@
   </xsl:template>
 
   <xsl:template match="id('siteSub')">
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]">
+    <fo:page-sequence format="i" master-reference="all-pages">
+
+      <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
+        <xsl:apply-templates/>
+      </fo:flow>
+
+    </fo:page-sequence>
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
