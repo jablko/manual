@@ -9,9 +9,15 @@
 
   <xsl:template match="html:body">
     <xsl:copy>
+
       <xsl:apply-templates mode="front-cover"/>
-      <xsl:apply-templates mode="table-of-contents"/>
+
+      <html:ol>
+        <xsl:apply-templates mode="table-of-contents"/>
+      </html:ol>
+
       <xsl:apply-templates select="@*|node()"/>
+
     </xsl:copy>
   </xsl:template>
 
@@ -51,13 +57,7 @@
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' main ')]" mode="table-of-contents">
-    <html:ol>
-      <xsl:apply-templates mode="table-of-contents"/>
-    </html:ol>
-  </xsl:template>
-
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' main ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <html:li>
 
       <html:a href="#{generate-id()}">
