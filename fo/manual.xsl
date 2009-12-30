@@ -182,23 +182,28 @@
       </fo:list-item-label>
       <fo:list-item-body end-indent="2em" start-indent="2em">
         <fo:block>
-          <fo:block text-align-last="justify">
-            <fo:basic-link internal-destination="{generate-id()}">
-              <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
-            </fo:basic-link>
-          </fo:block>
-          <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
-            <xsl:apply-templates mode="table-of-contents" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
-          </fo:block>
+          <xsl:apply-templates mode="table-of-contents"/>
         </fo:block>
       </fo:list-item-body>
     </fo:list-item>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//html:h1" mode="table-of-contents">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
-        <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+        <xsl:apply-templates/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+      </fo:basic-link>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
+    <xsl:apply-templates mode="table-of-contents"/>
+  </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]//html:h1" mode="table-of-contents">
+    <fo:block font-family="serif" font-weight="normal" leader-pattern="space" text-align-last="justify">
+      <fo:basic-link internal-destination="{generate-id()}">
+        <xsl:apply-templates/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
       </fo:basic-link>
     </fo:block>
   </xsl:template>

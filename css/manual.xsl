@@ -61,7 +61,7 @@
     <html:li>
 
       <html:a href="#{generate-id()}">
-        <xsl:apply-templates mode="table-of-contents" select=".//html:h1"/>
+        <xsl:apply-templates mode="table-of-contents.heading"/>
       </html:a>
 
       <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
@@ -71,6 +71,12 @@
       </xsl:if>
 
     </html:li>
+  </xsl:template>
+
+  <xsl:template match="text()" mode="table-of-contents.heading"/>
+
+  <xsl:template match="html:h1" mode="table-of-contents.heading">
+    <xsl:apply-templates/>
   </xsl:template>
 
 </xsl:stylesheet>
