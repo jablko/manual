@@ -87,20 +87,19 @@
               <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
             </fo:basic-link>
           </fo:block>
-          <xsl:apply-templates mode="bbb" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
+          <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
+            <xsl:apply-templates mode="bbb" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
+          </fo:block>
         </fo:block>
       </fo:list-item-body>
     </fo:list-item>
   </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="bbb">
-    <!-- TODO Use fo:wrapper, https://issues.apache.org/bugzilla/show_bug.cgi?id=47530 -->
-    <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
-      <fo:block text-align-last="justify">
-        <fo:basic-link internal-destination="{generate-id()}">
-          <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
-        </fo:basic-link>
-      </fo:block>
+    <fo:block text-align-last="justify">
+      <fo:basic-link internal-destination="{generate-id()}">
+        <xsl:apply-templates mode="bbb" select=".//html:h1"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+      </fo:basic-link>
     </fo:block>
   </xsl:template>
 
