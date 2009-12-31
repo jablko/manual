@@ -68,7 +68,7 @@
 
       <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
         <html:ol>
-          <xsl:apply-templates mode="table-of-contents" select="*[contains(concat(' ', @class, ' '), ' section ')]"/>
+          <xsl:apply-templates mode="table-of-contents"/>
         </html:ol>
       </xsl:if>
 
