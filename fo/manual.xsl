@@ -6,9 +6,13 @@
 
       <fo:layout-master-set>
         <fo:simple-page-master margin=".5in 1in" master-name="all-pages">
+
           <fo:region-body margin=".5in 0"/>
+
           <fo:region-before/>
+
           <fo:region-after display-align="after"/>
+
         </fo:simple-page-master>
       </fo:layout-master-set>
 
@@ -63,17 +67,23 @@
 
 <!--
   <xsl:template match="html:h1">
+
     <fo:marker marker-class-name="heading">
       Chapter <xsl:number/>: <xsl:apply-templates/>
     </fo:marker>
+
     <fo:block space-after="1in" space-before="1in" space-before.conditionality="retain">
+
       <fo:block font-size="14pt">
         Chapter <xsl:number/>
       </fo:block>
+
       <fo:block font-size="24pt">
         <xsl:apply-templates/>
       </fo:block>
+
     </fo:block>
+
   </xsl:template>
 -->
 
@@ -95,16 +105,19 @@
 
   <xsl:template match="html:ul//html:li">
     <fo:list-item>
+
       <fo:list-item-label start-indent="1em">
         <fo:block>
           &#x2022;
         </fo:block>
       </fo:list-item-label>
+
       <fo:list-item-body end-indent="2em" start-indent="2em">
         <fo:block>
           <xsl:apply-templates/>
         </fo:block>
       </fo:list-item-body>
+
     </fo:list-item>
   </xsl:template>
 
@@ -175,23 +188,29 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
     <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
+
       <fo:list-item-label start-indent="1em">
         <fo:block>
           <xsl:number/>.
         </fo:block>
       </fo:list-item-label>
+
       <fo:list-item-body end-indent="2em" start-indent="2em">
         <fo:block>
+
           <fo:block text-align-last="justify">
             <fo:basic-link internal-destination="{generate-id()}">
               <xsl:apply-templates mode="table-of-contents.heading"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
             </fo:basic-link>
           </fo:block>
+
           <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
             <xsl:apply-templates mode="table-of-contents"/>
           </fo:block>
+
         </fo:block>
       </fo:list-item-body>
+
     </fo:list-item>
   </xsl:template>
 
