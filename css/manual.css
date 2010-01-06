@@ -13,10 +13,17 @@
 }
 
 .front-cover,
+.section,
 .table-of-contents
 {
   page-break-after: always;
   page-break-before: always;
+}
+
+.section .section
+{
+  page-break-after: auto;
+  page-break-before: auto;
 }
 
 .table-of-contents a::after
