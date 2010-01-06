@@ -9,6 +9,7 @@
 .front-cover
 {
   font-size: 24pt;
+  page-break-after: always;
   text-align: center;
 }
 
