@@ -45,7 +45,17 @@
 
   <xsl:template match="@href">
     <xsl:attribute name="href">
-      <xsl:value-of select="resolve-uri(., base-uri())"/>
+      <xsl:choose>
+
+        <xsl:when test="//*[contains(concat(' ', @class, ' '), ' section ') and .//*[resolve-uri(current(), base-uri(current())) = base-uri()]]">
+          <xsl:value-of select="concat('#', generate-id(//*[contains(concat(' ', @class, ' '), ' section ') and .//*[resolve-uri(current(), base-uri(current())) = base-uri()]]))"/>
+        </xsl:when>
+
+        <xsl:otherwise>
+          <xsl:value-of select="resolve-uri(., base-uri())"/>
+        </xsl:otherwise>
+
+      </xsl:choose>
     </xsl:attribute>
   </xsl:template>
 
