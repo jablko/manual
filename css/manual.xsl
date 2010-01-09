@@ -12,11 +12,11 @@
 
       <xsl:apply-templates mode="front-cover"/>
 
-      <html:div class="table-of-contents">
+      <html:section class="table-of-contents">
         <html:ol>
           <xsl:apply-templates mode="table-of-contents"/>
         </html:ol>
-      </html:div>
+      </html:section>
 
       <xsl:apply-templates select="@*|node()"/>
 
@@ -31,7 +31,7 @@
     </xsl:attribute>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]">
+  <xsl:template match="html:section">
     <xsl:copy>
 
       <xsl:attribute name="id">
@@ -45,7 +45,7 @@
 
   <xsl:template match="@href[//*[resolve-uri(current(), base-uri(current())) = base-uri()]]">
     <xsl:attribute name="href">
-      <xsl:value-of select="concat('#', generate-id(//*[contains(concat(' ', @class, ' '), ' section ') and .//*[resolve-uri(current(), base-uri(current())) = base-uri()] and not(.//*[contains(concat(' ', @class, ' '), ' section ') and .//*[resolve-uri(current(), base-uri(current())) = base-uri()]])]))"/>
+      <xsl:value-of select="concat('#', generate-id(//html:section[.//*[resolve-uri(current(), base-uri(current())) = base-uri()] and not(.//html:section[.//*[resolve-uri(current(), base-uri(current())) = base-uri()]])]))"/>
     </xsl:attribute>
   </xsl:template>
 
@@ -59,14 +59,14 @@
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
+  <xsl:template match="html:section" mode="table-of-contents">
     <html:li>
 
       <html:a href="#{generate-id()}">
         <xsl:apply-templates mode="table-of-contents.heading"/>
       </html:a>
 
-      <xsl:if test="*[contains(concat(' ', @class, ' '), ' section ')]">
+      <xsl:if test="html:section">
         <html:ol>
           <xsl:apply-templates mode="table-of-contents"/>
         </html:ol>
@@ -77,7 +77,7 @@
 
   <xsl:template match="text()" mode="table-of-contents.heading"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents.heading"/>
+  <xsl:template match="html:section" mode="table-of-contents.heading"/>
 
   <xsl:template match="html:h1" mode="table-of-contents.heading">
     <xsl:apply-templates/>

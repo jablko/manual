@@ -137,7 +137,7 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' printfooter ')]"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]">
+  <xsl:template match="html:section">
     <fo:block id="{generate-id()}">
       <xsl:apply-templates/>
     </fo:block>
@@ -164,7 +164,7 @@
     </fo:bookmark-title>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="bookmark-tree">
+  <xsl:template match="html:section" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
       <xsl:apply-templates mode="bookmark-tree"/>
     </fo:bookmark>
@@ -186,7 +186,7 @@
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
+  <xsl:template match="html:section" mode="table-of-contents">
     <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
 
       <fo:list-item-label start-indent="1em">
@@ -214,7 +214,7 @@
     </fo:list-item>
   </xsl:template>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]//*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents">
+  <xsl:template match="html:section//html:section" mode="table-of-contents">
     <fo:block text-align-last="justify">
       <fo:basic-link internal-destination="{generate-id()}">
         <xsl:apply-templates mode="table-of-contents.heading"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
@@ -224,7 +224,7 @@
 
   <xsl:template match="text()" mode="table-of-contents.heading"/>
 
-  <xsl:template match="*[contains(concat(' ', @class, ' '), ' section ')]" mode="table-of-contents.heading"/>
+  <xsl:template match="html:section" mode="table-of-contents.heading"/>
 
   <xsl:template match="html:h1" mode="table-of-contents.heading">
     <xsl:apply-templates/>
