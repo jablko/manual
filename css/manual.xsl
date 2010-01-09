@@ -59,7 +59,7 @@
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
-  <xsl:template match="html:section" mode="table-of-contents">
+  <xsl:template match="html:section[not(contains(concat(' ', @class, ' '), ' front-cover '))]" mode="table-of-contents">
     <html:li>
 
       <html:a href="#{generate-id()}">

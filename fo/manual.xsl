@@ -164,7 +164,7 @@
     </fo:bookmark-title>
   </xsl:template>
 
-  <xsl:template match="html:section" mode="bookmark-tree">
+  <xsl:template match="html:section[not(contains(concat(' ', @class, ' '), ' front-cover '))]" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
       <xsl:apply-templates mode="bookmark-tree"/>
     </fo:bookmark>
@@ -186,7 +186,7 @@
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
-  <xsl:template match="html:section" mode="table-of-contents">
+  <xsl:template match="html:section[not(contains(concat(' ', @class, ' '), ' front-cover '))]" mode="table-of-contents">
     <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
 
       <fo:list-item-label start-indent="1em">
