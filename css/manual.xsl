@@ -13,6 +13,9 @@
       <xsl:apply-templates mode="front-cover"/>
 
       <html:section class="table-of-contents">
+
+        <html:h>Table of Contents</html:h>
+
         <html:ol>
           <xsl:apply-templates mode="table-of-contents"/>
         </html:ol>

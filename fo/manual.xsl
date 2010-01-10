@@ -25,11 +25,17 @@
       <fo:page-sequence format="i" master-reference="all-pages">
 
         <fo:flow flow-name="xsl-region-body">
+
+          <fo:block>
+            Table of Contents
+          </fo:block>
+
           <fo:block>
             <fo:list-block>
               <xsl:apply-templates mode="table-of-contents"/>
             </fo:list-block>
           </fo:block>
+
         </fo:flow>
 
       </fo:page-sequence>
