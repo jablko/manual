@@ -71,7 +71,6 @@
     </fo:basic-link>
   </xsl:template>
 
-<!--
   <xsl:template match="html:h1">
 
     <fo:marker marker-class-name="heading">
@@ -91,7 +90,6 @@
     </fo:block>
 
   </xsl:template>
--->
 
   <xsl:template match="html:img">
     <fo:external-graphic src="url('{resolve-uri(@src, base-uri())}')"/>
