@@ -101,6 +101,12 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="html:section">
+    <fo:block id="{generate-id()}">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
   <xsl:template match="html:ul">
     <fo:list-block space-after=".5em" space-before=".5em">
       <xsl:apply-templates/>
@@ -140,12 +146,6 @@
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' magnify ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' printfooter ')]"/>
-
-  <xsl:template match="html:section">
-    <fo:block id="{generate-id()}">
-      <xsl:apply-templates/>
-    </fo:block>
-  </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' thumb ')]">
     <!-- TODO Use fo:float, http://wiki.apache.org/xmlgraphics-fop/GoogleSummerOfCode2006/FloatsImplementationProgress/ImplementingSideFloats -->
