@@ -160,6 +160,8 @@
     </fo:block>
   </xsl:template>
 
+  <!-- Bookmark tree -->
+
   <xsl:template match="text()" mode="bookmark-tree"/>
 
   <xsl:template match="html:h1" mode="bookmark-tree">
@@ -167,6 +169,8 @@
       <xsl:apply-templates/>
     </fo:bookmark-title>
   </xsl:template>
+
+  <!-- Front cover -->
 
   <xsl:template match="html:section[not(contains(concat(' ', @class, ' '), ' front-cover '))]" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
@@ -187,6 +191,8 @@
 
     </fo:page-sequence>
   </xsl:template>
+
+  <!-- Table of contents -->
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
