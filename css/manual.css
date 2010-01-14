@@ -1,5 +1,12 @@
+h1::before
+{
+  content: 'Chapter ' counter(chapter);
+  display: block;
+}
+
 section
 {
+  counter-increment: chapter;
   display: block;
   page-break-after: always;
   page-break-before: always;
@@ -9,6 +16,18 @@ section section
 {
   page-break-after: auto;
   page-break-before: auto;
+}
+
+section section,
+.front-cover,
+.table-of-contents
+{
+  counter-increment: none;
+}
+
+section section h1::before
+{
+  content: normal;
 }
 
 #jump-to-nav,
