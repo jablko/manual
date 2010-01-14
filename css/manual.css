@@ -4,6 +4,11 @@ h1::before
   display: block;
 }
 
+h1
+{
+  string-set: chapter content();
+}
+
 section
 {
   counter-increment: chapter;
@@ -23,6 +28,11 @@ section section,
 .table-of-contents
 {
   counter-increment: none;
+}
+
+section section h1
+{
+  string-set: none;
 }
 
 section section h1::before
@@ -51,6 +61,11 @@ section section h1::before
 
 @page
 {
+  @top-left
+  {
+    content: 'Chapter ' counter(chapter) ': ' string(chapter);
+  }
+
   @top-right
   {
     content: counter(page);
