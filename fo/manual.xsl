@@ -102,7 +102,7 @@
   </xsl:template>
 
   <xsl:template match="html:section">
-    <fo:block id="{generate-id()}">
+    <fo:block break-after="page" break-before="page" id="{generate-id()}">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
