@@ -91,12 +91,6 @@
 
   </xsl:template>
 
-  <xsl:template match="html:section//html:section//html:h1">
-    <fo:block font-size="18pt">
-      <xsl:apply-templates/>
-    </fo:block>
-  </xsl:template>
-
   <xsl:template match="html:img">
     <fo:external-graphic src="url('{resolve-uri(@src, base-uri())}')"/>
   </xsl:template>
@@ -115,6 +109,12 @@
 
   <xsl:template match="html:section//html:section">
     <fo:block id="{generate-id()}">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
+  <xsl:template match="html:section//html:section//html:h1">
+    <fo:block font-size="18pt">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
