@@ -29,3 +29,11 @@ section section
 {
   content: leader('.') target-counter(attr(href), page);
 }
+
+@page
+{
+  @top-right
+  {
+    content: counter(page);
+  }
+}
