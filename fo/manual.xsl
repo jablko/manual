@@ -108,7 +108,7 @@
   </xsl:template>
 
   <xsl:template match="html:section//html:section">
-    <fo:block id="{generate-id()}">
+    <fo:block id="{generate-id()}" space-after=".5in" space-before=".5in">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
