@@ -107,6 +107,12 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="html:section//html:section">
+    <fo:block id="{generate-id()}">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
   <xsl:template match="html:ul">
     <fo:list-block space-after=".5em" space-before=".5em">
       <xsl:apply-templates/>
