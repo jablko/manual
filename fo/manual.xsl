@@ -7,23 +7,15 @@
       <fo:layout-master-set>
 
         <fo:simple-page-master margin=".5in 1in" master-name="all-pages">
-
           <fo:region-body margin=".5in 0"/>
-
           <fo:region-before/>
-
           <fo:region-after display-align="after"/>
-
         </fo:simple-page-master>
 
         <fo:simple-page-master margin=".5in 1in" master-name="glossary">
-
           <fo:region-body column-count="2" margin=".5in 0"/>
-
           <fo:region-before/>
-
           <fo:region-after display-align="after"/>
-
         </fo:simple-page-master>
 
       </fo:layout-master-set>
@@ -42,11 +34,9 @@
             Table of Contents
           </fo:block>
 
-          <fo:block>
-            <fo:list-block>
-              <xsl:apply-templates mode="table-of-contents"/>
-            </fo:list-block>
-          </fo:block>
+          <fo:list-block>
+            <xsl:apply-templates mode="table-of-contents"/>
+          </fo:list-block>
 
         </fo:flow>
 
@@ -67,9 +57,7 @@
         </fo:static-content>
 
         <fo:flow flow-name="xsl-region-body" font-family="serif" text-align="justify">
-          <fo:block>
-            <xsl:apply-templates/>
-          </fo:block>
+          <xsl:apply-templates/>
         </fo:flow>
 
       </fo:page-sequence>
@@ -91,7 +79,7 @@
       Chapter <xsl:number/>: <xsl:apply-templates/>
     </fo:marker>
 
-    <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain">
+    <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
 
       <fo:block font-size="14pt">
         Chapter <xsl:number/>
@@ -228,13 +216,11 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="front-cover">
     <fo:page-sequence format="i" master-reference="all-pages">
-
       <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
-        <fo:block>
+        <fo:block break-after="page" break-before="page" id="{generate-id()}">
           <xsl:apply-templates/>
         </fo:block>
       </fo:flow>
-
     </fo:page-sequence>
   </xsl:template>
 
@@ -258,7 +244,7 @@
       </fo:static-content>
 
       <fo:flow flow-name="xsl-region-body" font-family="serif" text-align="justify">
-        <fo:block>
+        <fo:block break-after="page" break-before="page" id="{generate-id()}">
           <xsl:apply-templates/>
         </fo:block>
       </fo:flow>
@@ -280,19 +266,17 @@
       </fo:list-item-label>
 
       <fo:list-item-body end-indent="2em" start-indent="2em">
-        <fo:block>
 
-          <fo:block text-align-last="justify">
-            <fo:basic-link internal-destination="{generate-id()}">
-              <xsl:apply-templates mode="table-of-contents.heading"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
-            </fo:basic-link>
-          </fo:block>
-
-          <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
-            <xsl:apply-templates mode="table-of-contents"/>
-          </fo:block>
-
+        <fo:block text-align-last="justify">
+          <fo:basic-link internal-destination="{generate-id()}">
+            <xsl:apply-templates mode="table-of-contents.heading"/><fo:leader/><fo:page-number-citation ref-id="{generate-id()}"/>
+          </fo:basic-link>
         </fo:block>
+
+        <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
+          <xsl:apply-templates mode="table-of-contents"/>
+        </fo:block>
+
       </fo:list-item-body>
 
     </fo:list-item>
