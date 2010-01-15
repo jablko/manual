@@ -65,6 +65,11 @@ section section h1::before
   content: leader('.') target-counter(attr(href), page);
 }
 
+.thumbinner
+{
+  width: auto !important;
+}
+
 @page
 {
   @top-left
