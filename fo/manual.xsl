@@ -91,7 +91,7 @@
       Chapter <xsl:number/>: <xsl:apply-templates/>
     </fo:marker>
 
-    <fo:block space-after="1in" space-before="1in" space-before.conditionality="retain">
+    <fo:block space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain">
 
       <fo:block font-size="14pt">
         Chapter <xsl:number/>
