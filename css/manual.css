@@ -65,6 +65,17 @@ section section h1::before
   columns: 2;
 }
 
+.glossary #bodyContent > *
+{
+  margin-left: 2em;
+}
+
+.glossary #bodyContent > h2
+{
+  font-size: inherit;
+  margin-left: 0;
+}
+
 .table-of-contents a::after
 {
   content: leader('.') target-counter(attr(href), page);
