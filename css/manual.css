@@ -55,6 +55,11 @@ section section h1::before
   text-align: center;
 }
 
+.glossary
+{
+  columns: 2;
+}
+
 .table-of-contents a::after
 {
   content: leader('.') target-counter(attr(href), page);
