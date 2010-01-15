@@ -101,6 +101,8 @@
     </fo:block>
   </xsl:template>
 
+  <xsl:template match="html:script"/>
+
   <xsl:template match="html:section">
     <fo:block break-after="page" break-before="page" id="{generate-id()}">
       <xsl:apply-templates/>
