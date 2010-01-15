@@ -147,6 +147,8 @@
 
   <xsl:template match="id('siteSub')"/>
 
+  <xsl:template match="id('toc')"/>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
