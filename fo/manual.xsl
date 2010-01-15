@@ -202,13 +202,13 @@
     </fo:bookmark-title>
   </xsl:template>
 
-  <!-- Front cover -->
-
   <xsl:template match="html:section[not(contains(concat(' ', @class, ' '), ' front-cover '))]" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
       <xsl:apply-templates mode="bookmark-tree"/>
     </fo:bookmark>
   </xsl:template>
+
+  <!-- Front cover -->
 
   <xsl:template match="text()" mode="front-cover"/>
 
