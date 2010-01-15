@@ -91,13 +91,13 @@
       Chapter <xsl:number/>: <xsl:apply-templates/>
     </fo:marker>
 
-    <fo:block space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain">
+    <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain">
 
       <fo:block font-size="14pt">
         Chapter <xsl:number/>
       </fo:block>
 
-      <fo:block font-size="24pt">
+      <fo:block>
         <xsl:apply-templates/>
       </fo:block>
 
@@ -168,6 +168,18 @@
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' glossary ')]"/>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' glossary ')]//html:h1">
+
+    <fo:marker marker-class-name="heading">
+      <xsl:apply-templates/>
+    </fo:marker>
+
+    <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
+      <xsl:apply-templates/>
+    </fo:block>
+
+  </xsl:template>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
     <fo:block>
