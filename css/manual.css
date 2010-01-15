@@ -20,6 +20,7 @@ section
 
 section section
 {
+  margin: .5in 0;
   page-break-after: auto;
   page-break-before: auto;
 }
@@ -33,6 +34,8 @@ section section,
 
 section section h1
 {
+  font-size: 18pt;
+  margin: .25in 0;
   string-set: none;
 }
 
