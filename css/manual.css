@@ -1,6 +1,7 @@
 h1::before
 {
   content: 'Chapter ' counter(chapter);
+  font-size: 14pt;
   display: block;
 }
 
