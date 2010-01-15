@@ -5,6 +5,7 @@
     <fo:root>
 
       <fo:layout-master-set>
+
         <fo:simple-page-master margin=".5in 1in" master-name="all-pages">
 
           <fo:region-body margin=".5in 0"/>
@@ -14,6 +15,17 @@
           <fo:region-after display-align="after"/>
 
         </fo:simple-page-master>
+
+        <fo:simple-page-master margin=".5in 1in" master-name="glossary">
+
+          <fo:region-body column-count="2" margin=".5in 0"/>
+
+          <fo:region-before/>
+
+          <fo:region-after display-align="after"/>
+
+        </fo:simple-page-master>
+
       </fo:layout-master-set>
 
       <fo:bookmark-tree>
@@ -61,6 +73,8 @@
         </fo:flow>
 
       </fo:page-sequence>
+
+      <xsl:apply-templates mode="glossary"/>
 
     </fo:root>
   </xsl:template>
@@ -153,6 +167,8 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]"/>
 
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' glossary ')]"/>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' image ')]">
     <fo:block>
       <fo:external-graphic content-height="4in" content-width="4in" src="url('{resolve-uri(document(@href)/id('file')//html:img/@src, resolve-uri(@href, base-uri()))}')"/>
@@ -200,6 +216,34 @@
     <fo:page-sequence format="i" master-reference="all-pages">
 
       <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
+        <fo:block>
+          <xsl:apply-templates/>
+        </fo:block>
+      </fo:flow>
+
+    </fo:page-sequence>
+  </xsl:template>
+
+  <!-- Glossary -->
+
+  <xsl:template match="text()" mode="glossary"/>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' glossary ')]" mode="glossary">
+    <fo:page-sequence master-reference="glossary">
+
+      <fo:static-content flow-name="xsl-region-before" font-family="serif" text-align-last="justify">
+        <fo:block>
+          <fo:retrieve-marker retrieve-class-name="heading"/><fo:leader/><fo:page-number/>
+        </fo:block>
+      </fo:static-content>
+
+      <fo:static-content color="gray" flow-name="xsl-region-after" font-family="serif" text-align-last="justify">
+        <fo:block>
+          <fo:external-graphic content-height="12pt" src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/><fo:leader/>Brought to you by <fo:external-graphic content-height="12pt" src="url('http://artefactual.com/images/logo.png')"/>
+        </fo:block>
+      </fo:static-content>
+
+      <fo:flow flow-name="xsl-region-body" font-family="serif" text-align="justify">
         <fo:block>
           <xsl:apply-templates/>
         </fo:block>
