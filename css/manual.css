@@ -6,6 +6,7 @@ h1::before
 
 h1
 {
+  margin: 1in 0;
   string-set: chapter content();
 }
 
