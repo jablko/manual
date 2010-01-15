@@ -55,7 +55,7 @@ section section h1::before
   text-align: center;
 }
 
-.glossary
+.glossary #bodyContent
 {
   columns: 2;
 }
