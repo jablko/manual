@@ -19,6 +19,7 @@
         <html:ol>
           <xsl:apply-templates mode="table-of-contents"/>
         </html:ol>
+
       </html:section>
 
       <xsl:apply-templates select="@*|node()"/>
@@ -52,6 +53,8 @@
     </xsl:attribute>
   </xsl:template>
 
+  <!-- Front cover -->
+
   <xsl:template match="text()" mode="front-cover"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="front-cover">
@@ -59,6 +62,8 @@
       <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
+
+  <!-- Table of contents -->
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
