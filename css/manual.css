@@ -71,6 +71,11 @@ section section h1::before
 .glossary #bodyContent
 {
   columns: 2;
+  -webkit-columns: 2;
+
+  /* Firefox doesn't yet support columns: or -moz-columns: */
+
+  -moz-column-count: 2;
 }
 
 .glossary #bodyContent > *
