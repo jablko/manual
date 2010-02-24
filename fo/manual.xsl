@@ -34,7 +34,7 @@
             Table of Contents
           </fo:block>
 
-          <fo:list-block>
+          <fo:list-block font-weight="bold">
             <xsl:apply-templates mode="table-of-contents"/>
           </fo:list-block>
 
@@ -257,7 +257,7 @@
   <xsl:template match="text()" mode="table-of-contents"/>
 
   <xsl:template match="html:section" mode="table-of-contents">
-    <fo:list-item font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
+    <fo:list-item leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
 
       <fo:list-item-label start-indent="1em">
         <fo:block>
