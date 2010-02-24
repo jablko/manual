@@ -103,6 +103,13 @@ section section h1::before
   content: leader('. ') target-counter(attr(href), page);
 }
 
+.table-of-contents ol ol a::after
+{
+  /* Likewise leader(space) is apparently equivalent to leader(' ') */
+
+  content: leader(' ') target-counter(attr(href), page);
+}
+
 .thumbinner
 {
   width: auto !important;
