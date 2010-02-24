@@ -73,6 +73,12 @@
     </fo:basic-link>
   </xsl:template>
 
+  <xsl:template match="html:h">
+    <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
   <xsl:template match="html:h1">
 
     <fo:marker marker-class-name="heading">
@@ -216,7 +222,7 @@
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="front-cover">
     <fo:page-sequence format="i" master-reference="all-pages">
-      <fo:flow font-size="24pt" flow-name="xsl-region-body" text-align="center">
+      <fo:flow flow-name="xsl-region-body" text-align="center">
         <fo:block break-after="page" break-before="page" id="{generate-id()}">
           <xsl:apply-templates/>
         </fo:block>
