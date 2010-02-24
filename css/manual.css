@@ -1,6 +1,16 @@
+h,
 h1
 {
+  display: block;
+  font-size: 24pt;
+  font-weight: bold;
+  page-break-after: avoid;
+  prince-bookmark-level: 1;
   margin: 1in 0;
+}
+
+h1
+{
   string-set: chapter content();
 }
 
@@ -64,7 +74,6 @@ section section h1::before
 
 .front-cover
 {
-  font-size: 24pt;
   text-align: center;
 }
 
