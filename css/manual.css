@@ -103,6 +103,11 @@ section section h1::before
   content: leader('. ') target-counter(attr(href), page);
 }
 
+.table-of-contents li
+{
+  margin: 1em 0;
+}
+
 .table-of-contents ol
 {
   font-weight: bold;
@@ -125,6 +130,7 @@ section section h1::before
 .table-of-contents ol ol li
 {
   list-style: none;
+  margin: 0;
 }
 
 .thumbinner
