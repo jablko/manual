@@ -1,14 +1,14 @@
+h1
+{
+  margin: 1in 0;
+  string-set: chapter content();
+}
+
 h1::before
 {
   content: 'Chapter ' counter(chapter);
   font-size: 14pt;
   display: block;
-}
-
-h1
-{
-  margin: 1in 0;
-  string-set: chapter content();
 }
 
 section
