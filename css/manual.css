@@ -89,9 +89,18 @@ section section h1::before
   margin-left: 0;
 }
 
+.table-of-contents a
+{
+  color: #000;
+  text-decoration: none;
+}
+
 .table-of-contents a::after
 {
-  content: leader('.') target-counter(attr(href), page);
+  /* Prince 7.0 doesn't support leader(dotted), but apparently it's equivalent
+   * to leader('. '), http://www.w3.org/TR/css3-gcpm/#leaders */
+
+  content: leader('. ') target-counter(attr(href), page);
 }
 
 .thumbinner
