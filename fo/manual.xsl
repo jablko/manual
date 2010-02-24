@@ -30,7 +30,7 @@
 
         <fo:flow flow-name="xsl-region-body">
 
-          <fo:block>
+          <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
             Table of Contents
           </fo:block>
 
