@@ -111,6 +111,8 @@ section section h1::before
 .table-of-contents ol ol
 {
   font-weight: normal;
+  margin: 0;
+  padding: 0;
 }
 
 .table-of-contents ol ol a::after
@@ -118,6 +120,11 @@ section section h1::before
   /* Likewise leader(space) is apparently equivalent to leader(' ') */
 
   content: leader(' ') target-counter(attr(href), page);
+}
+
+.table-of-contents ol ol li
+{
+  list-style: none;
 }
 
 .thumbinner
