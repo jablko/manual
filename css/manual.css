@@ -57,6 +57,11 @@ section section h1
   string-set: none;
 }
 
+section section h2
+{
+  prince-bookmark-level: 3;
+}
+
 section section h1::before
 {
   /* Reset h1::before style */
