@@ -4,7 +4,6 @@ h1
   display: block;
   font-size: 24pt;
   font-weight: bold;
-  page-break-after: avoid;
   prince-bookmark-level: 1;
   margin: 1in 0;
 }
