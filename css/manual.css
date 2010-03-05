@@ -64,15 +64,6 @@ section section h1::before
   content: normal;
 }
 
-#jump-to-nav,
-#siteSub,
-#toc,
-.magnify,
-.printfooter
-{
-  display: none;
-}
-
 .front-cover
 {
   text-align: center;
@@ -97,6 +88,15 @@ section section h1::before
 {
   font-size: inherit;
   margin-left: 0;
+}
+
+.magnify,
+.printfooter,
+#jump-to-nav,
+#siteSub,
+#toc
+{
+  display: none;
 }
 
 .table-of-contents a
