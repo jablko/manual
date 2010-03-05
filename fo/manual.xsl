@@ -208,6 +208,14 @@
     </fo:bookmark-title>
   </xsl:template>
 
+  <xsl:template match="html:h2" mode="bookmark-tree">
+    <fo:bookmark internal-destination="{generate-id()}">
+      <fo:bookmark-title>
+        <xsl:apply-templates/>
+      </fo:bookmark-title>
+    </fo:bookmark>
+  </xsl:template>
+
   <xsl:template match="html:section" mode="bookmark-tree">
     <fo:bookmark internal-destination="{generate-id()}">
       <xsl:apply-templates mode="bookmark-tree"/>
