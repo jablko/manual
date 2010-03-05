@@ -50,6 +50,7 @@ section section h1
 {
   font-size: 18pt;
   margin: .25in 0;
+  prince-bookmark-level: 2;
 
   /* Reset h1 style */
 
