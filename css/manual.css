@@ -115,6 +115,8 @@ section section h1::before
 .table-of-contents li
 {
   margin: 1em 0;
+  orphans: 3;
+  widows: 3;
 }
 
 .table-of-contents ol
