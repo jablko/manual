@@ -122,7 +122,6 @@ section section h1::before
 
 .table-of-contents li
 {
-  font-family: Arial, sans-serif;
   margin: 1em 0;
   orphans: 3;
   widows: 3;
@@ -130,6 +129,7 @@ section section h1::before
 
 .table-of-contents ol
 {
+  font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
