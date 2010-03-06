@@ -46,7 +46,7 @@
             Table of Contents
           </fo:block>
 
-          <fo:list-block font-family="Arial, sans-serif" font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em">
+          <fo:list-block color="#069" font-family="Arial, sans-serif" font-weight="bold" leader-pattern="dots" leader-pattern-width=".5em">
             <xsl:apply-templates mode="table-of-contents"/>
           </fo:list-block>
 
@@ -305,7 +305,7 @@
           </fo:basic-link>
         </fo:block>
 
-        <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
+        <fo:block color="#000" font-family="serif" font-weight="normal" leader-pattern="space">
           <xsl:apply-templates mode="table-of-contents"/>
         </fo:block>
 

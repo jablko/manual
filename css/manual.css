@@ -167,7 +167,7 @@ section section h1::before
 
 .table-of-contents a
 {
-  color: #000;
+  color: inherit;
   text-decoration: none;
 }
 
@@ -188,12 +188,14 @@ section section h1::before
 
 .table-of-contents ol
 {
+  color: #069;
   font-family: Arial, sans-serif;
   font-weight: bold;
 }
 
 .table-of-contents ol ol
 {
+  color: #000;
   font-family: serif;
   font-weight: normal;
   margin: 0;
