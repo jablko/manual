@@ -293,7 +293,7 @@
           </fo:basic-link>
         </fo:block>
 
-        <fo:block font-weight="normal" leader-pattern="space">
+        <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
           <xsl:apply-templates mode="table-of-contents"/>
         </fo:block>
 
