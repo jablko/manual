@@ -1,3 +1,42 @@
+@page
+{
+  @top-left
+  {
+    content: 'Chapter ' counter(chapter) ': ' string(chapter);
+  }
+
+  @top-right
+  {
+    content: counter(page);
+  }
+}
+
+@page front-cover
+{
+  @top-left
+  {
+    content: normal;
+  }
+
+  @top-right
+  {
+    content: normal;
+  }
+}
+
+@page table-of-contents
+{
+  @top-left
+  {
+    content: 'Table of Contents';
+  }
+
+  @top-right
+  {
+    content: counter(page, lower-roman);
+  }
+}
+
 h,
 h1
 {
@@ -163,43 +202,4 @@ section section h1::before
 .thumbinner
 {
   width: auto !important;
-}
-
-@page
-{
-  @top-left
-  {
-    content: 'Chapter ' counter(chapter) ': ' string(chapter);
-  }
-
-  @top-right
-  {
-    content: counter(page);
-  }
-}
-
-@page front-cover
-{
-  @top-left
-  {
-    content: normal;
-  }
-
-  @top-right
-  {
-    content: normal;
-  }
-}
-
-@page table-of-contents
-{
-  @top-left
-  {
-    content: 'Table of Contents';
-  }
-
-  @top-right
-  {
-    content: counter(page, lower-roman);
-  }
 }
