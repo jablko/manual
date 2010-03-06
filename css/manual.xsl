@@ -49,7 +49,11 @@
 
   <xsl:template match="@href[//*[resolve-uri(current(), base-uri(current())) = base-uri()]]">
     <xsl:attribute name="href">
+
+      <!-- Link instead to the closest ancestor <section> -->
+
       <xsl:value-of select="concat('#', generate-id(//html:section[.//*[resolve-uri(current(), base-uri(current())) = base-uri()] and not(.//html:section[.//*[resolve-uri(current(), base-uri(current())) = base-uri()]])]))"/>
+
     </xsl:attribute>
   </xsl:template>
 
