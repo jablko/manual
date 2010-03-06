@@ -1,6 +1,6 @@
 all: manual.pdf
 
-manual.pdf: manual.css manual.html prince.xsl
+manual.pdf: manual.html prince.xsl print.css style.css
 	java -jar ../saxon9he.jar manual.html prince.xsl base=../manual.html | ../prince-7.0-linux/lib/prince/bin/prince --baseurl ../manual.html - > manual.pdf
 
 manual.html: ../base.xsl ../manual.html manual.xsl

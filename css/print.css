@@ -1,0 +1,100 @@
+@page
+{
+  font-size: 9pt;
+
+  @top-left
+  {
+    content: 'Chapter ' counter(chapter) ': ' string(chapter);
+  }
+
+  @top-right
+  {
+    content: counter(page);
+  }
+}
+
+@page front-cover
+{
+  @top-left
+  {
+    content: normal;
+  }
+
+  @top-right
+  {
+    content: normal;
+  }
+}
+
+@page table-of-contents
+{
+  @top-left
+  {
+    content: 'Table of Contents';
+  }
+
+  @top-right
+  {
+    content: counter(page, lower-roman);
+  }
+}
+
+body
+{
+  background: transparent;
+}
+
+h,
+h1
+{
+  prince-bookmark-level: 1;
+}
+
+h1
+{
+  string-set: chapter content();
+}
+
+h2
+{
+  prince-bookmark-level: 3;
+}
+
+section
+{
+  page-break-after: always;
+  page-break-before: always;
+}
+
+section section
+{
+  /* Reset section style */
+
+  page-break-after: auto;
+  page-break-before: auto;
+}
+
+section section h1
+{
+  prince-bookmark-level: 2;
+
+  /* Reset h1 style */
+
+  string-set: none;
+}
+
+.front-cover
+{
+  page: front-cover;
+}
+
+.table-of-contents
+{
+  page: table-of-contents;
+}
+
+.table-of-contents li
+{
+  orphans: 3;
+  widows: 3;
+}
