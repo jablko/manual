@@ -99,6 +99,12 @@
 
   </xsl:template>
 
+  <xsl:template match="html:h2">
+    <fo:block font-size="18pt" id="{generate-id()}">
+      <xsl:apply-templates/>
+    </fo:block>
+  </xsl:template>
+
   <xsl:template match="html:img">
     <fo:external-graphic src="url('{resolve-uri(@src, base-uri())}')"/>
   </xsl:template>
