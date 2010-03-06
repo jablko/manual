@@ -3,6 +3,12 @@
 
   <xsl:param name="base"/>
 
+  <xsl:template match="@*|node()">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="/*">
     <xsl:copy>
 
@@ -14,12 +20,6 @@
 
       <xsl:apply-templates select="@*|node()"/>
 
-    </xsl:copy>
-  </xsl:template>
-
-  <xsl:template match="@*|node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
     </xsl:copy>
   </xsl:template>
 
