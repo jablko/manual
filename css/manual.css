@@ -135,6 +135,7 @@ section section h1::before
 
 .table-of-contents ol ol
 {
+  font-family: serif;
   font-weight: normal;
   margin: 0;
   padding: 0;
