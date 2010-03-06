@@ -28,7 +28,7 @@
 
       <fo:page-sequence format="i" master-reference="all-pages">
 
-        <fo:flow flow-name="xsl-region-body">
+        <fo:flow flow-name="xsl-region-body" font-family="serif">
 
           <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
             Table of Contents
@@ -293,7 +293,7 @@
           </fo:basic-link>
         </fo:block>
 
-        <fo:block font-family="serif" font-weight="normal" leader-pattern="space">
+        <fo:block font-weight="normal" leader-pattern="space">
           <xsl:apply-templates mode="table-of-contents"/>
         </fo:block>
 
