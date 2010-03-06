@@ -112,7 +112,7 @@
   </xsl:template>
 
   <xsl:template match="html:h2">
-    <fo:block font-size="18pt" id="{generate-id()}">
+    <fo:block color="#069" font-family="Arial, sans-serif" font-size="14pt" id="{generate-id()}">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
