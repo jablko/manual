@@ -99,7 +99,7 @@
 
     <fo:block font-family="Arial, sans-serif" font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
 
-      <fo:block font-size="14pt">
+      <fo:block font-size="14pt" space-after=".5em" space-before=".5em">
         Chapter <xsl:number/>
       </fo:block>
 
