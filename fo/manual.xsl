@@ -28,13 +28,13 @@
 
       <fo:page-sequence format="i" master-reference="all-pages">
 
-        <fo:static-content flow-name="xsl-region-before" font-family="serif" text-align-last="justify">
+        <fo:static-content flow-name="xsl-region-before" font-family="serif" font-size="9pt" text-align-last="justify">
           <fo:block>
             Table of Contents<fo:leader/><fo:page-number/>
           </fo:block>
         </fo:static-content>
 
-        <fo:static-content color="gray" flow-name="xsl-region-after" font-family="serif" text-align-last="justify">
+        <fo:static-content color="gray" flow-name="xsl-region-after" font-family="serif" font-size="9pt" text-align-last="justify">
           <fo:block>
             <fo:external-graphic content-height="12pt" src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/><fo:leader/>Brought to you by <fo:external-graphic content-height="12pt" src="url('http://artefactual.com/images/logo.png')"/>
           </fo:block>
@@ -56,13 +56,13 @@
 
       <fo:page-sequence initial-page-number="1" master-reference="all-pages">
 
-        <fo:static-content flow-name="xsl-region-before" font-family="serif" text-align-last="justify">
+        <fo:static-content flow-name="xsl-region-before" font-family="serif" font-size="9pt" text-align-last="justify">
           <fo:block>
             <fo:retrieve-marker retrieve-class-name="heading"/><fo:leader/><fo:page-number/>
           </fo:block>
         </fo:static-content>
 
-        <fo:static-content color="gray" flow-name="xsl-region-after" font-family="serif" text-align-last="justify">
+        <fo:static-content color="gray" flow-name="xsl-region-after" font-family="serif" font-size="9pt" text-align-last="justify">
           <fo:block>
             <fo:external-graphic content-height="12pt" src="url('http://ica-atom.org/images/ica-atom-logo-1_0.png')"/><fo:leader/>Brought to you by <fo:external-graphic content-height="12pt" src="url('http://artefactual.com/images/logo.png')"/>
           </fo:block>
