@@ -43,11 +43,17 @@ h,
 h1
 {
   display: block;
-  font-family: Arial, sans-serif;
   font-size: 24pt;
-  font-weight: normal;
   prince-bookmark-level: 1;
   margin: 1in 0;
+}
+
+h,
+h1,
+h2
+{
+  font-family: Arial, sans-serif;
+  font-weight: normal;
 }
 
 h1
@@ -65,7 +71,14 @@ h1::before
 
 h2
 {
+  font-size: 14pt;
   prince-bookmark-level: 3;
+}
+
+h2,
+section section h1
+{
+  color: #069;
 }
 
 section
@@ -95,7 +108,6 @@ section section,
 
 section section h1
 {
-  color: #069;
   font-size: 18pt;
   margin: 1em 0;
   prince-bookmark-level: 2;
