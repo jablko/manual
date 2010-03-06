@@ -73,6 +73,7 @@ section section h1::before
 
 .front-cover
 {
+  page: front-matter;
   text-align: center;
 }
 
@@ -104,6 +105,11 @@ section section h1::before
 #toc
 {
   display: none;
+}
+
+.table-of-contents
+{
+  page: front-matter;
 }
 
 .table-of-contents a
@@ -169,5 +175,18 @@ section section h1::before
   @top-right
   {
     content: counter(page);
+  }
+}
+
+@page front-matter
+{
+  @top-left
+  {
+    content: normal;
+  }
+
+  @top-right
+  {
+    content: normal;
   }
 }
