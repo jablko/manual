@@ -73,7 +73,7 @@ section section h1::before
 
 .front-cover
 {
-  page: front-matter;
+  page: front-cover;
   text-align: center;
 }
 
@@ -109,7 +109,7 @@ section section h1::before
 
 .table-of-contents
 {
-  page: front-matter;
+  page: table-of-contents;
 }
 
 .table-of-contents a
@@ -178,7 +178,7 @@ section section h1::before
   }
 }
 
-@page front-matter
+@page front-cover
 {
   @top-left
   {
@@ -188,5 +188,18 @@ section section h1::before
   @top-right
   {
     content: normal;
+  }
+}
+
+@page table-of-contents
+{
+  @top-left
+  {
+    content: 'Table of Contents';
+  }
+
+  @top-right
+  {
+    content: counter(page, lower-roman);
   }
 }
