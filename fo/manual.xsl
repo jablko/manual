@@ -130,7 +130,7 @@
   </xsl:template>
 
   <xsl:template match="html:section//html:section//html:h1">
-    <fo:block color="#069" font-family="Arial, sans-serif" font-size="18pt" space-after=".25in" space-before=".25in">
+    <fo:block color="#069" font-family="Arial, sans-serif" font-size="18pt" space-after="1em" space-before="1em">
       <xsl:apply-templates/>
     </fo:block>
   </xsl:template>
