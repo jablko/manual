@@ -30,7 +30,7 @@
 
         <fo:flow flow-name="xsl-region-body" font-family="serif">
 
-          <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
+          <fo:block font-family="Arial, sans-serif" font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
             Table of Contents
           </fo:block>
 
@@ -85,7 +85,7 @@
       Chapter <xsl:number/>: <xsl:apply-templates/>
     </fo:marker>
 
-    <fo:block font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
+    <fo:block font-family="Arial, sans-serif" font-size="24pt" space-after="1in" space-after.conditionality="retain" space-before="1in" space-before.conditionality="retain" span="all">
 
       <fo:block font-size="14pt">
         Chapter <xsl:number/>
@@ -277,7 +277,7 @@
   <xsl:template match="text()" mode="table-of-contents"/>
 
   <xsl:template match="html:section" mode="table-of-contents">
-    <fo:list-item leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
+    <fo:list-item font-family="Arial, sans-serif" leader-pattern="dots" leader-pattern-width=".5em" space-after="1em" space-before="1em">
 
       <fo:list-item-label start-indent="1em">
         <fo:block>
