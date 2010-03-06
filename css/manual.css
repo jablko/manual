@@ -39,6 +39,12 @@
   }
 }
 
+body
+{
+  background: url(background.svg) no-repeat fixed;
+  -webkit-background-size: 26px 380px;
+}
+
 h,
 h1
 {
