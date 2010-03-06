@@ -19,6 +19,7 @@ h1::before
   content: 'Chapter ' counter(chapter);
   display: block;
   font-size: 14pt;
+  margin: .5em 0;
 }
 
 h2
