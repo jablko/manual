@@ -41,7 +41,10 @@
 
 body
 {
+  /* Reset */
+
   background: transparent;
+  margin: 0;
 }
 
 h,
