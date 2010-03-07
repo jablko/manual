@@ -49,7 +49,7 @@
 
   <!-- Likewise use substring-before() -->
 
-  <xsl:template match="*[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(resolve-uri(current()/@href, base-uri(current())), '#') = base-uri()]]">
+  <xsl:template match="*[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]]">
     <xsl:copy>
 
       <xsl:attribute name="class">
@@ -63,12 +63,12 @@
 
   <!-- Use substring-before() because neither OpenJDK 6 nor SAXON 9.2 resolve empty strings conformingly, http://thread.gmane.org/gmane.comp.java.openjdk.net.devel/1536, http://thread.gmane.org/gmane.text.xml.saxon.help/11638 -->
 
-  <xsl:template match="@href[//*[substring-before(resolve-uri(current(), base-uri(current())), '#') = base-uri()]]">
+  <xsl:template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]]">
     <xsl:attribute name="href">
 
       <!-- Link instead to the closest ancestor <section> -->
 
-      <xsl:value-of select="concat('#', generate-id(//html:section[.//*[substring-before(resolve-uri(current(), base-uri(current())), '#') = base-uri()] and not(.//html:section[.//*[substring-before(resolve-uri(current(), base-uri(current())), '#') = base-uri()]])]))"/>
+      <xsl:value-of select="concat('#', generate-id(//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()] and not(.//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]])]))"/>
 
     </xsl:attribute>
   </xsl:template>
