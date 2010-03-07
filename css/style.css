@@ -171,6 +171,11 @@ section section h1::before
   text-decoration: none;
 }
 
+.thumb
+{
+  max-width: 50%;
+}
+
 .thumbcaption::before
 {
   content: 'Figure ' counters(figure, '-') '.';
