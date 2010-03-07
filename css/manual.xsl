@@ -47,6 +47,18 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="*[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(resolve-uri(current()/@href, base-uri(current())), '#') = base-uri()]]">
+    <xsl:copy>
+
+      <xsl:attribute name="class">
+        <xsl:value-of select="@class"/> term
+      </xsl:attribute>
+
+      <xsl:apply-templates select="@*|node()"/>
+
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="@href[//*[resolve-uri(current(), base-uri(current())) = base-uri()]]">
     <xsl:attribute name="href">
 

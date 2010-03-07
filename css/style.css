@@ -155,6 +155,13 @@ section section h1::before
   margin: 0;
 }
 
+.term
+{
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+
 .thumbinner
 {
   width: auto !important;
