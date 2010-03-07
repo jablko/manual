@@ -100,3 +100,8 @@ section section h1
   orphans: 3;
   widows: 3;
 }
+
+.thumb
+{
+  page-break-inside: avoid;
+}
