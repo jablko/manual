@@ -48,6 +48,12 @@ h3
   font-size: 12pt;
 }
 
+img
+{
+  height: auto;
+  max-width: 100%;
+}
+
 section
 {
   counter-increment: chapter figure;
