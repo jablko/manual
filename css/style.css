@@ -66,22 +66,6 @@ section
   display: block;
 }
 
-section p:first-of-type:first-letter
-{
-  color: #069;
-  float: left;
-  font-size: 48pt;
-}
-
-section p:first-of-type::after
-{
-  clear: both;
-  content: '.';
-  display: block;
-  height: 0;
-  visibility: hidden;
-}
-
 section section
 {
   counter-reset: none;
@@ -108,7 +92,7 @@ section section h1::before
   content: normal;
 }
 
-section section p:first-of-type:first-letter
+section section #bodyContent > p:first-of-type:first-letter
 {
   /* Reset */
 
@@ -239,4 +223,20 @@ section section p:first-of-type:first-letter
 {
   clear: right;
   float: right;
+}
+
+#bodyContent > p:first-of-type:first-letter
+{
+  color: #069;
+  float: left;
+  font-size: 48pt;
+}
+
+#bodyContent > p:first-of-type::after
+{
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
 }
