@@ -50,12 +50,14 @@ h3
 
 section
 {
-  counter-increment: chapter;
+  counter-increment: chapter figure;
+  counter-reset: figure;
   display: block;
 }
 
 section section
 {
+  counter-reset: none;
   margin: .5in 0;
 }
 
@@ -167,6 +169,17 @@ section section h1::before
   color: inherit;
   font-weight: bold;
   text-decoration: none;
+}
+
+.thumbcaption::before
+{
+  content: 'Figure ' counters(figure, '-') '.';
+  counter-increment: figure;
+}
+
+.thumbcaption
+{
+  font-style: italic;
 }
 
 .thumbinner
