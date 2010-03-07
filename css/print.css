@@ -95,6 +95,8 @@ section section h1
   page: table-of-contents;
 }
 
+ol,
+ul,
 .table-of-contents li
 {
   orphans: 3;
