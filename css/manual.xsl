@@ -47,6 +47,8 @@
     </xsl:copy>
   </xsl:template>
 
+  <!-- Likewise use substring-before() -->
+
   <xsl:template match="*[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(resolve-uri(current()/@href, base-uri(current())), '#') = base-uri()]]">
     <xsl:copy>
 
@@ -59,7 +61,9 @@
     </xsl:copy>
   </xsl:template>
 
-  <xsl:template match="@href[//*[resolve-uri(current(), base-uri(current())) = base-uri()]]">
+  <!-- Use substring-before() because neither OpenJDK 6 nor SAXON 9.2 resolve empty strings conformingly, http://thread.gmane.org/gmane.comp.java.openjdk.net.devel/1536, http://thread.gmane.org/gmane.text.xml.saxon.help/11638 -->
+
+  <xsl:template match="@href[//*[substring-before(resolve-uri(current(), base-uri(current())), '#') = base-uri()]]">
     <xsl:attribute name="href">
 
       <!-- Link instead to the closest ancestor <section> -->
