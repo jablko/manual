@@ -47,12 +47,6 @@ body
   margin: 0;
 }
 
-h,
-h1
-{
-  prince-bookmark-level: 1;
-}
-
 h1
 {
   string-set: chapter content();
