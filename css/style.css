@@ -96,6 +96,13 @@ section section h1::before
   -moz-column-count: 2;
 }
 
+.glossary #bodyContent .thumb
+{
+  /* Reset */
+
+  max-width: none;
+}
+
 .glossary #bodyContent > *
 {
   margin-left: 2em;
