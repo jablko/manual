@@ -73,6 +73,15 @@ section p:first-of-type:first-letter
   font-size: 48pt;
 }
 
+section p:first-of-type::after
+{
+  clear: both;
+  content: '.';
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
 section section
 {
   counter-reset: none;
