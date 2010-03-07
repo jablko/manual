@@ -68,7 +68,7 @@
 
       <!-- Link instead to the closest ancestor <section> -->
 
-      <xsl:value-of select="concat('#', generate-id(//html:section[.//*[resolve-uri(current(), base-uri(current())) = base-uri()] and not(.//html:section[.//*[resolve-uri(current(), base-uri(current())) = base-uri()]])]))"/>
+      <xsl:value-of select="concat('#', generate-id(//html:section[.//*[substring-before(resolve-uri(current(), base-uri(current())), '#') = base-uri()] and not(.//html:section[.//*[substring-before(resolve-uri(current(), base-uri(current())), '#') = base-uri()]])]))"/>
 
     </xsl:attribute>
   </xsl:template>
