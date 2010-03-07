@@ -57,6 +57,11 @@ h2
   prince-bookmark-level: 3;
 }
 
+h3
+{
+  prince-bookmark-level: 4;
+}
+
 section
 {
   page-break-after: always;

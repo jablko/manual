@@ -16,7 +16,8 @@ h1
 
 h,
 h1,
-h2
+h2,
+h3
 {
   font-family: Arial, sans-serif;
   font-weight: normal;
@@ -36,9 +37,15 @@ h2
 }
 
 h2,
+h3,
 section section h1
 {
   color: #069;
+}
+
+h3
+{
+  font-size: 12pt;
 }
 
 section
