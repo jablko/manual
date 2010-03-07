@@ -108,6 +108,15 @@ section section h1::before
   content: normal;
 }
 
+section section p:first-of-type:first-letter
+{
+  /* Reset */
+
+  color: inherit;
+  float: none;
+  font-size: inherit;
+}
+
 .front-cover
 {
   text-align: center;
