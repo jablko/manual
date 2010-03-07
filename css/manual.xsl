@@ -49,7 +49,7 @@
 
   <!-- Likewise use substring-before() -->
 
-  <xsl:template match="*[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]]">
+  <xsl:template match="*[@href[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]]]">
     <xsl:copy>
 
       <xsl:attribute name="class">
