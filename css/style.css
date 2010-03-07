@@ -54,6 +54,11 @@ img
   max-width: 100%;
 }
 
+li
+{
+  margin: .15em 0;
+}
+
 section
 {
   counter-increment: chapter figure;
