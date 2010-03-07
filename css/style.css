@@ -66,6 +66,13 @@ section
   display: block;
 }
 
+section p:first-of-type:first-letter
+{
+  color: #069;
+  float: left;
+  font-size: 48pt;
+}
+
 section section
 {
   counter-reset: none;
