@@ -166,3 +166,8 @@ section section h1::before
 {
   width: auto !important;
 }
+
+.tright
+{
+  float: right;
+}
