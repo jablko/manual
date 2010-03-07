@@ -212,5 +212,6 @@ section section h1::before
 
 .tright
 {
+  clear: right;
   float: right;
 }
