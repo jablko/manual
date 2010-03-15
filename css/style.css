@@ -68,6 +68,8 @@ section section
 
 section section > :first-child
 {
+  /* Reset section > :first-child */
+
   counter-reset: none;
 }
 
@@ -86,7 +88,7 @@ section section h1
 
 section section h1:before
 {
-  /* Reset h1:before style */
+  /* Reset h1:before */
 
   content: normal;
 }
@@ -115,11 +117,11 @@ section section #bodyContent > p:first-of-type:first-letter
   -moz-column-count: 2;
 }
 
-.glossary #bodyContent .thumb
+.glossary #bodyContent .thumbinner
 {
-  /* Reset */
+  /* Reset .thumbinner, max-width: none; overflows */
 
-  max-width: none;
+  max-width: 100%;
 }
 
 .glossary #bodyContent > *
