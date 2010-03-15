@@ -187,7 +187,7 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .table-of-contents ol ol li
 {
-  list-style: none;
+  display: block;
   margin: 0;
 }
 
@@ -231,6 +231,8 @@ section section #bodyContent > p:first-of-type:first-letter
   float: left;
   font-size: 48pt;
 }
+
+/* Clearfix */
 
 #bodyContent > p:first-of-type:after
 {
