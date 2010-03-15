@@ -192,6 +192,13 @@ section section #bodyContent > p:first-of-type:first-letter
   text-decoration: none;
 }
 
+.thumb img
+{
+  box-shadow: 2px 2px .6em rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2px 2px .6em rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2px 2px .6em rgba(0, 0, 0, 0.5);
+}
+
 .thumbcaption:before
 {
   content: 'Figure ' counters(figure, '-') '.';
