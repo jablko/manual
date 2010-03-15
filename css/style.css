@@ -23,7 +23,7 @@ h3
   font-weight: normal;
 }
 
-h1::before
+h1:before
 {
   content: 'Chapter ' counter(chapter);
   display: block;
@@ -85,9 +85,9 @@ section section h1
   margin: 1em 0;
 }
 
-section section h1::before
+section section h1:before
 {
-  /* Reset h1::before style */
+  /* Reset h1:before style */
 
   content: normal;
 }
@@ -149,7 +149,7 @@ section section #bodyContent > p:first-of-type:first-letter
   text-decoration: none;
 }
 
-.table-of-contents a::after
+.table-of-contents a:after
 {
   /* Prince 7.0 doesn't support leader(dotted), but apparently it's equivalent
    * to leader('. '), http://www.w3.org/TR/css3-gcpm/#leaders */
@@ -178,7 +178,7 @@ section section #bodyContent > p:first-of-type:first-letter
   padding: 0;
 }
 
-.table-of-contents ol ol a::after
+.table-of-contents ol ol a:after
 {
   /* Likewise leader(space) is apparently equivalent to leader(' ') */
 
@@ -203,7 +203,7 @@ section section #bodyContent > p:first-of-type:first-letter
   max-width: 50%;
 }
 
-.thumbcaption::before
+.thumbcaption:before
 {
   content: 'Figure ' counters(figure, '-') '.';
   counter-increment: figure;
@@ -232,7 +232,7 @@ section section #bodyContent > p:first-of-type:first-letter
   font-size: 48pt;
 }
 
-#bodyContent > p:first-of-type::after
+#bodyContent > p:first-of-type:after
 {
   clear: both;
   content: '.';
