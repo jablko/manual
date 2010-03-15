@@ -214,6 +214,7 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .thumbcaption
 {
+  font-size: 9pt;
   font-style: italic;
 }
 
