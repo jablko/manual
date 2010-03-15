@@ -56,7 +56,7 @@ section
   display: block;
 }
 
-section:first-child
+section > :first-child
 {
   counter-reset: figure;
 }
@@ -64,6 +64,11 @@ section:first-child
 section section
 {
   margin: .5in 0;
+}
+
+section section > :first-child
+{
+  counter-reset: none;
 }
 
 section section,
