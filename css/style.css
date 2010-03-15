@@ -201,11 +201,6 @@ section section #bodyContent > p:first-of-type:first-letter
   text-decoration: none;
 }
 
-.thumb
-{
-  max-width: 50%;
-}
-
 .thumbcaption:before
 {
   content: 'Figure ' counters(figure, '-') '.';
@@ -220,12 +215,16 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .thumbinner
 {
-  width: auto !important;
+  max-width: 50%;
 }
 
 .tright
 {
   clear: right;
+}
+
+.tright .thumbinner
+{
   float: right;
   margin-bottom: 1em;
   margin-left: 1em;
