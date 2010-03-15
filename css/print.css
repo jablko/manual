@@ -103,6 +103,7 @@ ul,
   widows: 3;
 }
 
+.note,
 .thumb
 {
   page-break-inside: avoid;
