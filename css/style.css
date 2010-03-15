@@ -203,7 +203,6 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .thumb
 {
-  margin: 1em;
   max-width: 50%;
 }
 
@@ -228,6 +227,8 @@ section section #bodyContent > p:first-of-type:first-letter
 {
   clear: right;
   float: right;
+  margin-bottom: 1em;
+  margin-left: 1em;
 }
 
 #bodyContent > p:first-of-type:first-letter
