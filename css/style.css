@@ -17,7 +17,10 @@ h1
 h,
 h1,
 h2,
-h3
+h3,
+h4,
+h5,
+h6
 {
   font-family: Arial, sans-serif;
   font-weight: normal;
@@ -34,13 +37,6 @@ h1:before
 h2
 {
   font-size: 14pt;
-}
-
-h2,
-h3,
-section section h1
-{
-  color: #069;
 }
 
 h3
