@@ -203,6 +203,7 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .thumb
 {
+  margin: 1em;
   max-width: 50%;
 }
 
