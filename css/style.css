@@ -62,13 +62,16 @@ li
 section
 {
   counter-increment: chapter figure;
-  counter-reset: figure;
   display: block;
+}
+
+section:first-of-type
+{
+  counter-reset: figure;
 }
 
 section section
 {
-  counter-reset: none;
   margin: .5in 0;
 }
 
