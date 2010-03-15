@@ -56,7 +56,7 @@ section
   display: block;
 }
 
-section:first-of-type
+section:first-child
 {
   counter-reset: figure;
 }
