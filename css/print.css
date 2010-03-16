@@ -45,25 +45,6 @@
   }
 }
 
-:link:after
-{
-  content: attr(href);
-  float: footnote;
-  footnote-style-position: inside;
-}
-
-/* TODO Better way to select same-document references */
-
-:link[href*='file:']:after,
-.term:after,
-.thumb :link:after
-{
-  /* Reset */
-
-  content: normal;
-  float: none;
-}
-
 body
 {
   /* Reset */
@@ -85,6 +66,14 @@ h2
 h3
 {
   prince-bookmark-level: 4;
+}
+
+ol,
+ul,
+.table-of-contents li
+{
+  orphans: 3;
+  widows: 3;
 }
 
 section
@@ -120,16 +109,27 @@ section section h1
   page: table-of-contents;
 }
 
-ol,
-ul,
-.table-of-contents li
-{
-  orphans: 3;
-  widows: 3;
-}
-
 .note,
 .thumb
 {
   page-break-inside: avoid;
+}
+
+/* TODO Better way to select same-document references */
+
+.term:after,
+.thumb :link:after,
+:link[href*='file:']:after
+{
+  /* Reset */
+
+  content: normal;
+  float: none;
+}
+
+:link:after
+{
+  content: attr(href);
+  float: footnote;
+  footnote-style-position: inside;
 }
