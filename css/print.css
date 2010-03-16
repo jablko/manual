@@ -52,6 +52,17 @@ a[href]:after
   footnote-style-position: inside;
 }
 
+/* TODO Better way to select same-document references */
+
+a[href*='file:']:after,
+.term[href]:after,
+.thumb a:after
+{
+  /* Reset */
+
+  content: normal;
+}
+
 body
 {
   /* Reset */
@@ -120,10 +131,4 @@ ul,
 .thumb
 {
   page-break-inside: avoid;
-}
-
-.term[href]:after,
-.thumb a:after
-{
-  content: normal;
 }
