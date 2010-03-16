@@ -140,6 +140,14 @@ section section h1
   margin: .15em 0;
 }
 
+:link:after:footnote-call,
+:visited:after:footnote-call
+{
+  font: 9pt serif;
+  line-height: 0;
+  vertical-align: super;
+}
+
 :link:after:footnote-marker,
 :visited:after:footnote-marker
 {
