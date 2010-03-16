@@ -125,6 +125,7 @@ section section h1
 
   content: normal;
   float: none;
+  font-family: inherit;
 }
 
 :link:after
@@ -132,4 +133,6 @@ section section h1
   content: attr(href);
   float: footnote;
   footnote-style-position: inside;
+  font-family: monospace;
+  margin: .15em 0;
 }
