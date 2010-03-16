@@ -150,7 +150,7 @@ section section #bodyContent > p:first-of-type:first-letter
   text-decoration: none;
 }
 
-.table-of-contents a:after
+.table-of-contents a[href]:after
 {
   /* Prince 7.0 doesn't support leader(dotted), but apparently it's equivalent
    * to leader('. '), http://www.w3.org/TR/css3-gcpm/#leaders */
