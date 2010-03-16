@@ -39,6 +39,12 @@
   }
 }
 
+a:after
+{
+  content: attr(href);
+  float: footnote;
+}
+
 body
 {
   /* Reset */
@@ -70,7 +76,7 @@ section
 
 section section
 {
-  /* Reset section style */
+  /* Reset section */
 
   page-break-after: auto;
   page-break-before: auto;
@@ -80,7 +86,7 @@ section section h1
 {
   prince-bookmark-level: 2;
 
-  /* Reset h1 style */
+  /* Reset h1 */
 
   string-set: none;
 }
@@ -107,4 +113,9 @@ ul,
 .thumb
 {
   page-break-inside: avoid;
+}
+
+.term:after
+{
+  content: normal;
 }
