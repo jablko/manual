@@ -49,6 +49,7 @@ a[href]:after
 {
   content: attr(href);
   float: footnote;
+  footnote-style-position: inside;
 }
 
 body
