@@ -201,9 +201,9 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .thumb img
 {
-  box-shadow: 2px 2px .6em rgba(0, 0, 0, 0.5);
-  -moz-box-shadow: 2px 2px .6em rgba(0, 0, 0, 0.5);
-  -webkit-box-shadow: 2px 2px .6em rgba(0, 0, 0, 0.5);
+  box-shadow: 2pt 2pt .6em rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 2pt 2pt .6em rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 2pt 2pt .6em rgba(0, 0, 0, 0.5);
 }
 
 .thumbcaption:before
