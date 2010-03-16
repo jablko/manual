@@ -122,7 +122,8 @@ ul,
   page-break-inside: avoid;
 }
 
-.term[href]:after
+.term[href]:after,
+.thumb a:after
 {
   content: normal;
 }
