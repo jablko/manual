@@ -139,3 +139,10 @@ section section h1
   font-family: monospace;
   margin: .15em 0;
 }
+
+:link:after:footnote-marker,
+:visited:after:footnote-marker
+{
+  color: #000;
+  font: 9pt serif;
+}
