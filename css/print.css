@@ -45,7 +45,7 @@
   }
 }
 
-a[href]:after
+:link:after
 {
   content: attr(href);
   float: footnote;
@@ -54,9 +54,9 @@ a[href]:after
 
 /* TODO Better way to select same-document references */
 
-a[href*='file:']:after,
-.term[href]:after,
-.thumb a:after
+:link[href*='file:']:after,
+.term:after,
+.thumb :link:after
 {
   /* Reset */
 
