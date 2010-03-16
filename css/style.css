@@ -58,7 +58,7 @@ section
 
 section > :first-child
 {
-  counter-reset: figure;
+  counter-reset: figure footnote;
 }
 
 section section
