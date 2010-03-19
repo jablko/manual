@@ -198,6 +198,7 @@ section section #bodyContent > p:first-of-type:first-letter
 .term
 {
   color: inherit;
+  cursor: help;
   font-weight: bold;
   text-decoration: none;
 }
@@ -207,6 +208,12 @@ section section #bodyContent > p:first-of-type:first-letter
   box-shadow: 2pt 2pt .6em rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 2pt 2pt .6em rgba(0, 0, 0, 0.5);
   -webkit-box-shadow: 2pt 2pt .6em rgba(0, 0, 0, 0.5);
+}
+
+.thumb :link,
+.thumb :visited
+{
+  background: transparent;
 }
 
 .thumbcaption:before
