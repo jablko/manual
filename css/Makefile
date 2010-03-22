@@ -1,7 +1,7 @@
-all: manual$(if $(LANG),.$(LANG)).pdf
+all: $(patsubst ../manual%.html,manual%.pdf,$(wildcard ../manual*.html))
 
 clean:
-	rm -f manual$(if $(LANG),.$(LANG)).html manual$(if $(LANG),.$(LANG)).pdf
+	rm -f manual*.html manual*.pdf
 
 manual%.pdf: manual%.html prince.xsl print.css style.css
 	java -jar ../saxon9he.jar $< prince.xsl base=../manual$*.html | ../prince-7.0-linux/lib/prince/bin/prince --baseurl ../manual$*.html - > $@
