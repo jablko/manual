@@ -118,8 +118,8 @@ section section h1
 /* TODO Better way to select same-document references */
 
 .term:after,
-.thumb :link:after,
-.thumb :visited:after,
+.thumb :link[href]:after,
+.thumb :visited[href]:after,
 :link[href*='file:']:after,
 :visited[href*='file:']:after
 {
@@ -138,6 +138,12 @@ section section h1
   footnote-style-position: inside;
   font-family: monospace;
   margin: .15em 0;
+}
+
+:link[href^='/']:after,
+:visited[href^='/']:after
+{
+  content: 'http://ica-atom.org' attr(href);
 }
 
 :link:after:footnote-call,
