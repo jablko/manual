@@ -137,6 +137,7 @@ section section #bodyContent > p:first-of-type:first-letter
   margin-left: 0;
 }
 
+.glossary h1:before,
 .magnify,
 .printfooter,
 .table-of-contents ol ol ol,
