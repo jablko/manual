@@ -87,8 +87,8 @@
 
   <xsl:template match="text()" mode="table-of-contents"/>
 
-  <xsl:template match="html:section[not(contains(concat(' ', @class, ' '), ' front-cover '))]" mode="table-of-contents">
-    <html:li>
+  <xsl:template match="html:section" mode="table-of-contents">
+    <html:li class="{@class}">
 
       <html:a href="#{generate-id()}">
         <xsl:apply-templates mode="table-of-contents.heading"/>
@@ -102,6 +102,8 @@
 
     </html:li>
   </xsl:template>
+
+  <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="table-of-contents"/>
 
   <xsl:template match="text()" mode="table-of-contents.heading"/>
 
