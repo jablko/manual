@@ -34,12 +34,14 @@ h1:before
   margin: .5em 0;
 }
 
-h2
+h2,
+section section section h1
 {
   font-size: 14pt;
 }
 
-h3
+h3,
+section section section h2
 {
   font-size: 12pt;
 }
@@ -137,6 +139,7 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .magnify,
 .printfooter,
+.table-of-contents ol ol ol,
 #jump-to-nav,
 #siteSub,
 #toc

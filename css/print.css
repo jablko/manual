@@ -58,12 +58,14 @@ h1
   string-set: chapter content();
 }
 
-h2
+h2,
+section section section h1
 {
   prince-bookmark-level: 3;
 }
 
-h3
+h3,
+section section section h2
 {
   prince-bookmark-level: 4;
 }
