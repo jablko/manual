@@ -52,6 +52,12 @@ img
   max-width: 100%;
 }
 
+li.glossary
+{
+  display: block;
+  margin-left: 0;
+}
+
 section
 {
   counter-increment: chapter figure;
@@ -166,7 +172,8 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .table-of-contents li
 {
-  margin: 1em 0;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .table-of-contents ol
@@ -182,7 +189,6 @@ section section #bodyContent > p:first-of-type:first-letter
   font-family: serif;
   font-weight: normal;
   margin: 0;
-  padding: 0;
 }
 
 .table-of-contents ol ol :link[href]:after,
