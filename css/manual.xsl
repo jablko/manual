@@ -12,6 +12,8 @@
 
       <xsl:apply-templates mode="front-cover"/>
 
+      <xsl:apply-templates mode="contributors"/>
+
       <html:section class="table-of-contents">
 
         <html:h>Table of Contents</html:h>
@@ -26,6 +28,8 @@
 
     </xsl:copy>
   </xsl:template>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' contributors ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]"/>
 
@@ -73,6 +77,16 @@
     </xsl:attribute>
   </xsl:template>
 
+  <!-- Contributors -->
+
+  <xsl:template match="text()" mode="contributors"/>
+
+  <xsl:template match="*[contains(concat(' ', @class, ' '), ' contributors ')]" mode="contributors">
+    <xsl:copy>
+      <xsl:apply-templates select="@*|node()"/>
+    </xsl:copy>
+  </xsl:template>
+
   <!-- Front cover -->
 
   <xsl:template match="text()" mode="front-cover"/>
@@ -102,6 +116,8 @@
 
     </html:li>
   </xsl:template>
+
+  <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' contributors ')]" mode="table-of-contents"/>
 
   <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="table-of-contents"/>
 

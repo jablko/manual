@@ -19,6 +19,19 @@
   }
 }
 
+@page contributors
+{
+  @top-left
+  {
+    content: 'Contributors';
+  }
+
+  @top-right
+  {
+    content: counter(page, lower-roman);
+  }
+}
+
 @page front-cover
 {
   @top-left
@@ -93,6 +106,11 @@ section
   page-break-before: always;
 }
 
+section.glossary
+{
+  page: glossary;
+}
+
 section section
 {
   /* Reset section */
@@ -110,14 +128,14 @@ section section h1
   string-set: none;
 }
 
+.contributors
+{
+  page: contributors;
+}
+
 .front-cover
 {
   page: front-cover;
-}
-
-section.glossary
-{
-  page: glossary;
 }
 
 .table-of-contents

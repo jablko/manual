@@ -82,6 +82,7 @@ section section > :first-child
 }
 
 section section,
+.contributors,
 .front-cover,
 .table-of-contents
 {
@@ -143,6 +144,7 @@ section section #bodyContent > p:first-of-type:first-letter
   margin-left: 0;
 }
 
+.contributors h1:before,
 .glossary h1:before,
 .magnify,
 .printfooter,
