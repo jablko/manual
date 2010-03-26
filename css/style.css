@@ -207,7 +207,7 @@ section section #bodyContent > p:first-of-type:first-letter
   margin: 0;
 }
 
-.term
+[rel~=glossary]
 {
   color: inherit;
   cursor: help;
