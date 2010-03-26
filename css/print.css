@@ -133,6 +133,11 @@ section section h1
   page: contributors;
 }
 
+.contributors h1
+{
+  prince-bookmark-level: none;
+}
+
 .front-cover
 {
   page: front-cover;
