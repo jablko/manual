@@ -29,6 +29,22 @@
     </xsl:copy>
   </xsl:template>
 
+  <xsl:template match="html:section">
+    <xsl:copy>
+
+      <xsl:apply-templates select="@*"/>
+
+      <!-- Override @id -->
+
+      <xsl:attribute name="id">
+        <xsl:value-of select="generate-id()"/>
+      </xsl:attribute>
+
+      <xsl:apply-templates select="node()"/>
+
+    </xsl:copy>
+  </xsl:template>
+
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' contributors ')]"/>
 
   <xsl:template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]"/>
@@ -37,18 +53,6 @@
     <xsl:attribute name="src">
       <xsl:value-of select="resolve-uri(document(ancestor::*[contains(concat(' ', @class, ' '), ' image ')]/@href)/id('file')//html:img/@src, resolve-uri(ancestor::*[contains(concat(' ', @class, ' '), ' image ')]/@href, base-uri()))"/>
     </xsl:attribute>
-  </xsl:template>
-
-  <xsl:template match="html:section">
-    <xsl:copy>
-
-      <xsl:attribute name="id">
-        <xsl:value-of select="generate-id()"/>
-      </xsl:attribute>
-
-      <xsl:apply-templates select="@*|node()"/>
-
-    </xsl:copy>
   </xsl:template>
 
   <!-- Likewise use substring-before() -->
@@ -102,13 +106,15 @@
   <xsl:template match="text()" mode="table-of-contents"/>
 
   <xsl:template match="html:section" mode="table-of-contents">
-    <html:li class="{@class}">
+    <html:li>
+
+      <xsl:apply-templates select="@*"/>
 
       <html:a href="#{generate-id()}">
         <xsl:apply-templates mode="table-of-contents.heading"/>
       </html:a>
 
-      <xsl:if test="html:section">
+      <xsl:if test=".//html:section">
         <html:ol>
           <xsl:apply-templates mode="table-of-contents"/>
         </html:ol>
@@ -117,16 +123,16 @@
     </html:li>
   </xsl:template>
 
-  <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' contributors ')]" mode="table-of-contents"/>
-
-  <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="table-of-contents"/>
-
   <xsl:template match="text()" mode="table-of-contents.heading"/>
-
-  <xsl:template match="html:section" mode="table-of-contents.heading"/>
 
   <xsl:template match="html:h1" mode="table-of-contents.heading">
     <xsl:apply-templates/>
   </xsl:template>
+
+  <xsl:template match="html:section" mode="table-of-contents.heading"/>
+
+  <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' contributors ')]" mode="table-of-contents"/>
+
+  <xsl:template match="html:section[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="table-of-contents"/>
 
 </xsl:stylesheet>
