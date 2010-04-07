@@ -146,7 +146,9 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .glossary section
 {
+  margin-bottom: 1.2em;
   margin-left: 2em;
+  margin-top: .6em;
 }
 
 .glossary section h,
@@ -158,7 +160,9 @@ section section #bodyContent > p:first-of-type:first-letter
 .glossary section h6
 {
   font-size: inherit;
+  margin-bottom: .5em;
   margin-left: -2em;
+  margin-top: .5em;
 }
 
 .contributors h1:before,
