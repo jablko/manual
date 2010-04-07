@@ -137,22 +137,28 @@ section section #bodyContent > p:first-of-type:first-letter
   -moz-column-count: 2;
 }
 
-.glossary #bodyContent .thumbinner
+.glossary .thumbinner
 {
   /* Reset .thumbinner, max-width: none; overflows */
 
   max-width: 100%;
 }
 
-.glossary #bodyContent > *
+.glossary section
 {
   margin-left: 2em;
 }
 
-.glossary #bodyContent > h2
+.glossary section h,
+.glossary section h1,
+.glossary section h2,
+.glossary section h3,
+.glossary section h4,
+.glossary section h5,
+.glossary section h6
 {
   font-size: inherit;
-  margin-left: 0;
+  margin-left: -2em;
 }
 
 .contributors h1:before,
