@@ -149,7 +149,13 @@ section section section section h6
   page: contributors;
 }
 
-.contributors h1
+.contributors h,
+.contributors h1,
+.contributors h2,
+.contributors h3,
+.contributors h4,
+.contributors h5,
+.contributors h6
 {
   prince-bookmark-level: none;
 }
