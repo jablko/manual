@@ -135,6 +135,8 @@ section section #bodyContent > p:first-of-type:first-letter
   /* Firefox doesn't yet support columns: or -moz-columns: */
 
   -moz-column-count: 2;
+
+  font-size: 9pt;
 }
 
 .glossary .thumbinner
@@ -146,9 +148,9 @@ section section #bodyContent > p:first-of-type:first-letter
 
 .glossary section
 {
-  margin-bottom: 1.2em;
-  margin-left: 2em;
-  margin-top: .6em;
+  margin-bottom: .5em;
+  margin-left: 1em;
+  margin-top: .5em;
 }
 
 .glossary section h,
@@ -160,9 +162,9 @@ section section #bodyContent > p:first-of-type:first-letter
 .glossary section h6
 {
   font-size: inherit;
-  margin-bottom: .5em;
-  margin-left: -2em;
-  margin-top: .5em;
+  margin-bottom: 0;
+  margin-left: -1em;
+  margin-top: 0;
 }
 
 .contributors h1:before,
