@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<stylesheet version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform" xmlns:html="http://www.w3.org/1999/xhtml">
 
-  <xsl:template match="@*|node()">
-    <xsl:copy>
+  <template match="@*|node()">
+    <copy>
 
       <!-- Copy @xml:base -->
 
-      <xsl:apply-templates select="*['content' = @id]/@*"/>
+      <apply-templates select="*['content' = @id]/@*"/>
 
-      <xsl:apply-templates select="@*|node()"/>
+      <apply-templates select="@*|node()"/>
 
-    </xsl:copy>
-  </xsl:template>
+    </copy>
+  </template>
 
   <!-- No two elements in a document may have the same unique ID, http://www.w3.org/TR/xpath/#unique-id -->
 
-  <xsl:template match="*['content' = @id]">
-    <xsl:apply-templates mode="content"/>
-  </xsl:template>
+  <template match="*['content' = @id]">
+    <apply-templates mode="content"/>
+  </template>
 
   <!-- Content -->
 
-  <xsl:template match="text()" mode="content"/>
+  <template match="text()" mode="content"/>
 
-  <xsl:template match="html:section" mode="content">
-    <xsl:apply-templates/>
-  </xsl:template>
+  <template match="html:section" mode="content">
+    <apply-templates/>
+  </template>
 
-</xsl:stylesheet>
+</stylesheet>

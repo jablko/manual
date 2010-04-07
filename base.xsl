@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<stylesheet version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
 
-  <xsl:param name="base"/>
+  <param name="base"/>
 
-  <xsl:template match="@*|node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>
-  </xsl:template>
+  <template match="@*|node()">
+    <copy>
+      <apply-templates select="@*|node()"/>
+    </copy>
+  </template>
 
-  <xsl:template match="/*">
-    <xsl:copy>
+  <template match="/*">
+    <copy>
 
-      <xsl:if test="$base">
-        <xsl:attribute name="xml:base">
-          <xsl:value-of select="$base"/>
-        </xsl:attribute>
-      </xsl:if>
+      <if test="$base">
+        <attribute name="xml:base">
+          <value-of select="$base"/>
+        </attribute>
+      </if>
 
-      <xsl:apply-templates select="@*|node()"/>
+      <apply-templates select="@*|node()"/>
 
-    </xsl:copy>
-  </xsl:template>
+    </copy>
+  </template>
 
-</xsl:stylesheet>
+</stylesheet>

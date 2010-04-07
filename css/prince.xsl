@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<stylesheet version="1.0" xmlns="http://www.w3.org/1999/XSL/Transform">
 
-  <xsl:param name="base"/>
+  <param name="base"/>
 
-  <xsl:template match="@*|node()">
-    <xsl:copy>
-      <xsl:apply-templates select="@*|node()"/>
-    </xsl:copy>
-  </xsl:template>
+  <template match="@*|node()">
+    <copy>
+      <apply-templates select="@*|node()"/>
+    </copy>
+  </template>
 
-  <xsl:template match="@href[starts-with(., '#')]">
-    <xsl:attribute name="href">
-      file:<xsl:value-of select="concat($base, .)"/>
-    </xsl:attribute>
-  </xsl:template>
+  <template match="@href[starts-with(., '#')]">
+    <attribute name="href">
+      file:<value-of select="concat($base, .)"/>
+    </attribute>
+  </template>
 
-</xsl:stylesheet>
+</stylesheet>
