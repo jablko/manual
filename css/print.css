@@ -79,18 +79,6 @@ h1
   string-set: chapter content();
 }
 
-h2,
-section section section h1
-{
-  prince-bookmark-level: 3;
-}
-
-h3,
-section section section h2
-{
-  prince-bookmark-level: 4;
-}
-
 ol,
 p,
 ul,
@@ -119,13 +107,41 @@ section section
   page-break-before: auto;
 }
 
-section section h1
+section section h,
+section section h1,
+section section h2,
+section section h3,
+section section h4,
+section section h5,
+section section h6
 {
   prince-bookmark-level: 2;
 
   /* Reset h1 */
 
   string-set: none;
+}
+
+section section section h,
+section section section h1,
+section section section h2,
+section section section h3,
+section section section h4,
+section section section h5,
+section section section h6
+{
+  prince-bookmark-level: 3;
+}
+
+section section section section h,
+section section section section h1,
+section section section section h2,
+section section section section h3,
+section section section section h4,
+section section section section h5,
+section section section section h6
+{
+  prince-bookmark-level: 4;
 }
 
 .contributors

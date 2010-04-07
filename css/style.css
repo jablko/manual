@@ -7,14 +7,6 @@ body
 }
 
 h,
-h1
-{
-  display: block;
-  font-size: 24pt;
-  margin: 1in 0;
-}
-
-h,
 h1,
 h2,
 h3,
@@ -22,8 +14,11 @@ h4,
 h5,
 h6
 {
+  display: block;
   font-family: Anivers, sans-serif;
+  font-size: 24pt;
   font-weight: normal;
+  margin: 1in 0;
 }
 
 h1:before
@@ -32,18 +27,6 @@ h1:before
   display: block;
   font-size: 14pt;
   margin: .5em 0;
-}
-
-h2,
-section section section h1
-{
-  font-size: 14pt;
-}
-
-h3,
-section section section h2
-{
-  font-size: 12pt;
 }
 
 img
@@ -89,7 +72,13 @@ section section,
   counter-increment: none;
 }
 
-section section h1
+section section h,
+section section h1,
+section section h2,
+section section h3,
+section section h4,
+section section h5,
+section section h6
 {
   font-size: 18pt;
   margin: 1em 0;
@@ -100,6 +89,28 @@ section section h1:before
   /* Reset h1:before */
 
   content: normal;
+}
+
+section section section h,
+section section section h1,
+section section section h2,
+section section section h3,
+section section section h4,
+section section section h5,
+section section section h6
+{
+  font-size: 14pt;
+}
+
+section section section section h,
+section section section section h1,
+section section section section h2,
+section section section section h3,
+section section section section h4,
+section section section section h5,
+section section section section h6
+{
+  font-size: 12pt;
 }
 
 section section #bodyContent > p:first-of-type:first-letter
