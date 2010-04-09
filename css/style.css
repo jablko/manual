@@ -122,6 +122,20 @@ section section #bodyContent > p:first-of-type:first-letter
   font-size: inherit;
 }
 
+.catlinks,
+.contributors h1:before,
+.glossary h1:before,
+.magnify,
+.printfooter,
+.table-of-contents ol ol ol,
+.table-of-contents .glossary ol,
+#jump-to-nav,
+#siteSub,
+#toc
+{
+  display: none;
+}
+
 .front-cover
 {
   text-align: center;
@@ -165,19 +179,6 @@ section section #bodyContent > p:first-of-type:first-letter
   margin-bottom: 0;
   margin-left: -1em;
   margin-top: 0;
-}
-
-.contributors h1:before,
-.glossary h1:before,
-.magnify,
-.printfooter,
-.table-of-contents ol ol ol,
-.table-of-contents .glossary ol,
-#jump-to-nav,
-#siteSub,
-#toc
-{
-  display: none;
 }
 
 .table-of-contents :link,
