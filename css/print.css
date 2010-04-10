@@ -178,7 +178,6 @@ section section section section h6
 
 /* TODO Better way to select same-document references */
 
-.term:after,
 .thumb :link[href]:after,
 .thumb :visited[href]:after,
 :link[href*='file:']:after,
