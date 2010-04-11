@@ -165,9 +165,21 @@ section section section section h6
   page: front-cover;
 }
 
-.table-of-contents
+.new[href]:link:after,
+.new[href]:visited:after,
+.thumb [href]:link:after,
+.thumb [href]:visited:after,
+
+/* TODO Better way to select same-document references */
+
+[href*='file:']:link:after,
+[href*='file:']:visited:after
 {
-  page: table-of-contents;
+  /* Reset */
+
+  content: normal;
+  float: none;
+  font-family: inherit;
 }
 
 .note,
@@ -176,18 +188,9 @@ section section section section h6
   page-break-inside: avoid;
 }
 
-/* TODO Better way to select same-document references */
-
-.thumb :link[href]:after,
-.thumb :visited[href]:after,
-:link[href*='file:']:after,
-:visited[href*='file:']:after
+.table-of-contents
 {
-  /* Reset */
-
-  content: normal;
-  float: none;
-  font-family: inherit;
+  page: table-of-contents;
 }
 
 :link:after,
@@ -200,8 +203,8 @@ section section section section h6
   margin: .15em 0;
 }
 
-:link[href^='/']:after,
-:visited[href^='/']:after
+[href^='/']:link:after,
+[href^='/']:visited:after
 {
   content: 'http://ica-atom.org' attr(href);
 }

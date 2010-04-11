@@ -188,8 +188,8 @@ section section #bodyContent > p:first-of-type:first-letter
   text-decoration: none;
 }
 
-.table-of-contents :link[href]:after,
-.table-of-contents :visited[href]:after
+.table-of-contents [href]:link:after,
+.table-of-contents [href]:visited:after
 {
   /* Prince 7.0 doesn't support leader(dotted), but apparently it's equivalent
    * to leader('. '), http://www.w3.org/TR/css3-gcpm/#leaders */
@@ -218,8 +218,8 @@ section section #bodyContent > p:first-of-type:first-letter
   margin: 0;
 }
 
-.table-of-contents ol ol :link[href]:after,
-.table-of-contents ol ol :visited[href]:after
+.table-of-contents ol ol [href]:link:after,
+.table-of-contents ol ol [href]:visited:after
 {
   /* Likewise leader(space) is apparently equivalent to leader(' ') */
 
