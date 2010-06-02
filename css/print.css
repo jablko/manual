@@ -144,6 +144,17 @@ section section section section h6
   prince-bookmark-level: 4;
 }
 
+section section section section section h,
+section section section section section h1,
+section section section section section h2,
+section section section section section h3,
+section section section section section h4,
+section section section section section h5,
+section section section section section h6
+{
+  prince-bookmark-level: 5;
+}
+
 .contributors
 {
   page: contributors;
