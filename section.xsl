@@ -133,7 +133,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::html:h2[1]" mode="h1"/>
+    <apply-templates select="(following-sibling::html:h1|following-sibling::html:h2)[1]" mode="h1"/>
 
   </template>
 
@@ -227,7 +227,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::html:h3[1]" mode="h2"/>
+    <apply-templates select="(following-sibling::html:h1|following-sibling::html:h2|following-sibling::html:h3)[1]" mode="h2"/>
 
   </template>
 
@@ -305,7 +305,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::html:h4[1]" mode="h3"/>
+    <apply-templates select="(following-sibling::html:h1|following-sibling::html:h2|following-sibling::html:h3|following-sibling::html:h4)[1]" mode="h3"/>
 
   </template>
 
@@ -367,7 +367,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::html:h5[1]" mode="h4"/>
+    <apply-templates select="(following-sibling::html:h1|following-sibling::html:h2|following-sibling::html:h3|following-sibling::html:h4|following-sibling::html:h5)[1]" mode="h4"/>
 
   </template>
 
@@ -413,7 +413,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::html:h6[1]" mode="h5"/>
+    <apply-templates select="(following-sibling::html:h1|following-sibling::html:h2|following-sibling::html:h3|following-sibling::html:h4|following-sibling::html:h5|following-sibling::html:h6)[1]" mode="h5"/>
 
   </template>
 
