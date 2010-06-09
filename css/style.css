@@ -147,6 +147,11 @@ section section #bodyContent > p:first-of-type:first-letter
   display: none;
 }
 
+.contributors img
+{
+  max-width: 50%;
+}
+
 .front-cover
 {
   text-align: center;
