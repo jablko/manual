@@ -37,7 +37,23 @@
       <!-- Override @id -->
 
       <attribute name="id">
-        <value-of select="generate-id()"/>
+        <value-of select="replace(base-uri(), '.*[/=]', '')"/>
+      </attribute>
+
+      <apply-templates select="node()"/>
+
+    </copy>
+  </template>
+
+  <template match="html:section[base-uri(current()) = base-uri()]//html:section">
+    <copy>
+
+      <apply-templates select="@*"/>
+
+      <!-- Override @id -->
+
+      <attribute name="id">
+        <value-of select="concat(replace(base-uri(), '.*[/=]', ''), '/', @id)"/>
       </attribute>
 
       <apply-templates select="node()"/>
@@ -73,11 +89,7 @@
 
   <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]]">
     <attribute name="href">
-
-      <!-- Link instead to the closest ancestor <section/> -->
-
-      #<value-of select="generate-id(//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()] and not(.//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]])])"/>
-
+      #<value-of select="replace(replace(., '.*[/=]', ''), '#', '/')"/>
     </attribute>
   </template>
 
@@ -110,7 +122,25 @@
 
       <apply-templates select="@*"/>
 
-      <html:a href="#{generate-id()}">
+      <html:a href="#{replace(base-uri(), '.*[/=]', '')}">
+        <apply-templates mode="table-of-contents.heading"/>
+      </html:a>
+
+      <if test=".//html:section">
+        <html:ol>
+          <apply-templates mode="table-of-contents"/>
+        </html:ol>
+      </if>
+
+    </html:li>
+  </template>
+
+  <template match="html:section[base-uri(current()) = base-uri()]//html:section" mode="table-of-contents">
+    <html:li>
+
+      <apply-templates select="@*"/>
+
+      <html:a href="#{concat(replace(base-uri(), '.*[/=]', ''), '/', @id)}">
         <apply-templates mode="table-of-contents.heading"/>
       </html:a>
 
