@@ -74,7 +74,7 @@
   <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]]">
     <attribute name="href">
 
-      <!-- Link instead to the closest ancestor <section> -->
+      <!-- Link instead to the closest ancestor <section/> -->
 
       <value-of select="concat('#', generate-id(//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()] and not(.//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]])]))"/>
 
