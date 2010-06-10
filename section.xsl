@@ -15,6 +15,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -30,6 +32,8 @@
   <template match="html:h2">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -47,6 +51,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -62,6 +68,8 @@
   <template match="html:h4">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -79,6 +87,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -94,6 +104,8 @@
   <template match="html:h6">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -125,6 +137,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -140,6 +154,8 @@
   <template match="html:h3" mode="h1">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -157,6 +173,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -173,6 +191,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -188,6 +208,8 @@
   <template match="html:h6" mode="h1">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -219,6 +241,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -234,6 +258,8 @@
   <template match="html:h4" mode="h2">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -251,6 +277,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -266,6 +294,8 @@
   <template match="html:h6" mode="h2">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -297,6 +327,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -313,6 +345,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -328,6 +362,8 @@
   <template match="html:h6" mode="h3">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -359,6 +395,8 @@
 
     <html:section>
 
+      <apply-templates select="@id"/>
+
       <copy>
         <apply-templates select="@*|node()[1]"/>
       </copy>
@@ -374,6 +412,8 @@
   <template match="html:h6" mode="h4">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -404,6 +444,8 @@
   <template match="html:h6" mode="h5">
 
     <html:section>
+
+      <apply-templates select="@id"/>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
