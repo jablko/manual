@@ -76,13 +76,15 @@
   <template match="*[@href[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]]]">
     <copy>
 
+      <apply-templates select="@*"/>
+
       <!-- Append to @rel -->
 
       <attribute name="rel">
         <value-of select="@rel"/> glossary
       </attribute>
 
-      <apply-templates select="@*|node()"/>
+      <apply-templates select="node()"/>
 
     </copy>
   </template>
