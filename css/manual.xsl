@@ -76,7 +76,7 @@
 
       <!-- Link instead to the closest ancestor <section/> -->
 
-      <value-of select="concat('#', generate-id(//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()] and not(.//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]])]))"/>
+      #<value-of select="generate-id(//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()] and not(.//html:section[.//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]])])"/>
 
     </attribute>
   </template>
