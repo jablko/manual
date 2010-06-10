@@ -25,7 +25,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::html:h1[1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1][1]"/>
 
   </template>
 
@@ -43,7 +43,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h1|self::html:h2][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2][1]"/>
 
   </template>
 
@@ -61,7 +61,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h1|self::html:h2|self::html:h3][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3][1]"/>
 
   </template>
 
@@ -79,7 +79,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h1|self::html:h2|self::html:h3|self::html:h4][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4][1]"/>
 
   </template>
 
@@ -97,7 +97,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h1|self::html:h2|self::html:h3|self::html:h4|self::html:h4|self::html:h5][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h4|descendant-or-self::html:h5][1]"/>
 
   </template>
 
@@ -115,7 +115,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h1|self::html:h2|self::html:h3|self::html:h4][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4][1]"/>
 
   </template>
 
@@ -131,7 +131,7 @@
 
   </template>
 
-  <template match="html:h1" mode="h1"/>
+  <template match="*[descendant-or-self::html:h1]" mode="h1"/>
 
   <template match="html:h2" mode="h1">
 
@@ -165,7 +165,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h2|self::html:h3][1]" mode="h1"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h2|descendant-or-self::html:h3][1]" mode="h1"/>
 
   </template>
 
@@ -183,7 +183,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h2|self::html:h3|self::html:h4][1]" mode="h1"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4][1]" mode="h1"/>
 
   </template>
 
@@ -201,7 +201,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h2|self::html:h3|self::html:h4|self::html:h5][1]" mode="h1"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5][1]" mode="h1"/>
 
   </template>
 
@@ -219,7 +219,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h2|self::html:h3|self::html:h4|self::html:h5|self::html:h6][1]" mode="h1"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5|descendant-or-self::html:h6][1]" mode="h1"/>
 
   </template>
 
@@ -235,7 +235,7 @@
 
   </template>
 
-  <template match="html:h1|html:h2" mode="h2"/>
+  <template match="*[descendant-or-self::html:h1|descendant-or-self::html:h2]" mode="h2"/>
 
   <template match="html:h3" mode="h2">
 
@@ -269,7 +269,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h3|self::html:h4][1]" mode="h2"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h3|descendant-or-self::html:h4][1]" mode="h2"/>
 
   </template>
 
@@ -287,7 +287,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h3|self::html:h4|self::html:h5][1]" mode="h2"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5][1]" mode="h2"/>
 
   </template>
 
@@ -305,7 +305,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h3|self::html:h4|self::html:h5|self::html:h6][1]" mode="h2"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5|descendant-or-self::html:h6][1]" mode="h2"/>
 
   </template>
 
@@ -321,7 +321,7 @@
 
   </template>
 
-  <template match="html:h1|html:h2|html:h3" mode="h3"/>
+  <template match="*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3]" mode="h3"/>
 
   <template match="html:h4" mode="h3">
 
@@ -355,7 +355,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h4|self::html:h5][1]" mode="h3"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h4|descendant-or-self::html:h5][1]" mode="h3"/>
 
   </template>
 
@@ -373,7 +373,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h4|self::html:h5|self::html:h6][1]" mode="h3"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h4|descendant-or-self::html:h5|descendant-or-self::html:h6][1]" mode="h3"/>
 
   </template>
 
@@ -389,7 +389,7 @@
 
   </template>
 
-  <template match="html:h1|html:h2|html:h3|html:h4" mode="h4"/>
+  <template match="*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4]" mode="h4"/>
 
   <template match="html:h5" mode="h4">
 
@@ -423,7 +423,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[self::html:h5|self::html:h6][1]" mode="h4"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h5|descendant-or-self::html:h6][1]" mode="h4"/>
 
   </template>
 
@@ -439,7 +439,7 @@
 
   </template>
 
-  <template match="html:h1|html:h2|html:h3|html:h4|html:h5" mode="h5"/>
+  <template match="*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5]" mode="h5"/>
 
   <template match="html:h6" mode="h5">
 
@@ -471,6 +471,6 @@
 
   </template>
 
-  <template match="html:h1|html:h2|html:h3|html:h4|html:h5|html:h6" mode="h6"/>
+  <template match="*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5|descendant-or-self::html:h6]" mode="h6"/>
 
 </stylesheet>
