@@ -9,9 +9,9 @@
     </copy>
   </template>
 
-  <template match="@href[starts-with(., '#')]">
+  <template match="@href[starts-with(normalize-space(), '#')]">
     <attribute name="href">
-      file:<value-of select="concat($base, .)"/>
+      file:<value-of select="concat($base, normalize-space())"/>
     </attribute>
   </template>
 
