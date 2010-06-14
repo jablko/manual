@@ -144,7 +144,7 @@
 
       <apply-templates select="@*"/>
 
-      <html:a href="#{concat(replace(base-uri(), '.*[/=]', ''), '/', @id)}">
+      <html:a href="#{replace(base-uri(), '.*[/=]', '')}/{@id}">
         <apply-templates mode="table-of-contents.heading"/>
       </html:a>
 
