@@ -29,14 +29,14 @@
     </copy>
   </template>
 
+  <!-- Override @xml:id -->
+
   <template match="html:section">
     <copy>
 
       <apply-templates select="@*"/>
 
-      <!-- Override @id -->
-
-      <attribute name="id">
+      <attribute name="xml:id">
         <value-of select="replace(base-uri(), '.*[/=]', '')"/>
       </attribute>
 
@@ -50,9 +50,7 @@
 
       <apply-templates select="@*"/>
 
-      <!-- Override @id -->
-
-      <attribute name="id">
+      <attribute name="xml:id">
         <value-of select="concat(replace(base-uri(), '.*[/=]', ''), '/', @id)"/>
       </attribute>
 
