@@ -93,7 +93,7 @@
 
   <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]]">
     <attribute name="href">
-      #<value-of select="replace(replace(., '.*[/=]', ''), '#', '/')"/>
+      #<value-of select="replace(replace(resolve-uri(., base-uri()), '.*[/=]', ''), '#', '/')"/>
     </attribute>
   </template>
 
