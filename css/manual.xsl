@@ -157,9 +157,9 @@
     </html:li>
   </template>
 
-  <template match="html:section[contains(concat(' ', @class, ' '), ' contributors ')]" mode="table-of-contents"/>
+  <template match="*[contains(concat(' ', @class, ' '), ' contributors ')]" mode="table-of-contents"/>
 
-  <template match="html:section[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="table-of-contents"/>
+  <template match="*[contains(concat(' ', @class, ' '), ' front-cover ')]" mode="table-of-contents"/>
 
   <template match="text()" mode="table-of-contents.heading"/>
 
