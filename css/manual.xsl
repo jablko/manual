@@ -51,7 +51,7 @@
       <apply-templates select="@*"/>
 
       <attribute name="xml:id">
-        <value-of select="replace(base-uri(), '.*[/=]', '')"/>/<value-of select="@id"/>
+        <value-of select="replace(base-uri(), '.*[/=]', '')"/>.<value-of select="@id"/>
       </attribute>
 
       <apply-templates select="node()"/>
@@ -91,7 +91,7 @@
 
   <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]]">
     <attribute name="href">
-      #<value-of select="replace(replace(resolve-uri(., base-uri()), '.*[/=]', ''), '#', '/')"/>
+      #<value-of select="replace(replace(resolve-uri(., base-uri()), '.*[/=]', ''), '#', '.')"/>
     </attribute>
   </template>
 
@@ -142,7 +142,7 @@
 
       <apply-templates select="@*"/>
 
-      <html:a href="#{replace(base-uri(), '.*[/=]', '')}/{@id}">
+      <html:a href="#{replace(base-uri(), '.*[/=]', '')}.{@id}">
         <apply-templates mode="table-of-contents.heading"/>
       </html:a>
 
