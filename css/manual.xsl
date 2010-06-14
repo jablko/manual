@@ -51,7 +51,7 @@
       <apply-templates select="@*"/>
 
       <attribute name="xml:id">
-        <value-of select="concat(replace(base-uri(), '.*[/=]', ''), '/', @id)"/>
+        <value-of select="replace(base-uri(), '.*[/=]', '')"/>/<value-of select="@id"/>
       </attribute>
 
       <apply-templates select="node()"/>
