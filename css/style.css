@@ -179,8 +179,8 @@ section section #bodyContent > p:first-of-type:first-letter
 .glossary section
 {
   margin-bottom: .5em;
-  margin-left: 1em;
   margin-top: .5em;
+  padding-left: 1em;
 }
 
 .glossary section h,
