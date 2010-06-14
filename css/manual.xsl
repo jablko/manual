@@ -47,15 +47,7 @@
 
   <template match="html:section[base-uri(current()) = base-uri()]//html:section">
     <copy>
-
-      <apply-templates select="@*"/>
-
-      <attribute name="xml:id">
-        <value-of select="replace(base-uri(), '.*[/=]', '')"/>.<value-of select="@id"/>
-      </attribute>
-
-      <apply-templates select="node()"/>
-
+      <apply-templates mode="section" select="@*|node()"/>
     </copy>
   </template>
 
@@ -113,6 +105,20 @@
     <copy>
       <apply-templates select="@*|node()"/>
     </copy>
+  </template>
+
+  <!-- <section/> -->
+
+  <template match="@*|node()" mode="section">
+    <copy>
+      <apply-templates select="@*|node()"/>
+    </copy>
+  </template>
+
+  <template match="@id" mode="section">
+    <attribute name="xml:id">
+      <value-of select="replace(base-uri(), '.*[/=]', '')"/>.<value-of select="."/>
+    </attribute>
   </template>
 
   <!-- Table of contents -->
