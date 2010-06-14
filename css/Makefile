@@ -8,7 +8,7 @@ manual%.pdf: manual%.html prince.xsl print.css style.css
           | ../prince-7.0-linux/lib/prince/bin/prince \
             --baseurl ../manual$*.html - > $@
 
-manual%.html: ../manual%.html ../base.xsl ../content.xsl ../section.xsl manual.xsl
+manual%.html: ../manual%.html ../base.xsl ../content.xsl ../section.xsl manual.xsl new.xsl
 	java -Dxml.catalog.files=/etc/xml/catalog -jar ../saxon9he.jar \
             -x com.sun.org.apache.xml.internal.resolver.tools.ResolvingXMLReader \
             -xi $< ../section.xsl \
@@ -18,7 +18,9 @@ manual%.html: ../manual%.html ../base.xsl ../content.xsl ../section.xsl manual.x
             -x com.sun.org.apache.xml.internal.resolver.tools.ResolvingXMLReader \
             - manual.xsl \
           | java -jar ../saxon9he.jar \
-            - ../base.xsl base=$< > $@
+            - ../base.xsl base=$< \
+          | java -jar ../saxon9he.jar \
+            - new.xsl > $@
 
 # .SECONDARY doesn't support patterns?
 # http://www.gnu.org/software/make/manual/make.html#index-precious-targets-234
