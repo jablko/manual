@@ -140,9 +140,9 @@ section section #bodyContent > p:first-of-type:first-letter
 .printfooter,
 .table-of-contents ol ol ol,
 .table-of-contents .glossary ol,
+.tocClearfix,
 #jump-to-nav,
-#siteSub,
-#toc
+#siteSub
 {
   display: none;
 }
