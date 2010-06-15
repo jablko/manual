@@ -63,7 +63,7 @@
 
   <!-- Likewise use substring-before() -->
 
-  <template match="*[@href[//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]]]">
+  <template match="*[@href][//*[contains(concat(' ', @class, ' '), ' glossary ')]//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]]">
     <copy>
 
       <apply-templates select="@*"/>
