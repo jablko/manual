@@ -143,6 +143,7 @@ section section #bodyContent > p:first-of-type:first-letter
 .table-of-contents ol ol ol,
 .table-of-contents .glossary ol,
 .tocClearfix,
+#bodyContent > :first-child h3,
 #jump-to-nav,
 #siteSub
 {
