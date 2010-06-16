@@ -23,4 +23,22 @@
     </copy>
   </template>
 
+  <!-- TODO Use idref()? http://thread.gmane.org/gmane.text.xml.xsl.general.mulberrytech/80527 -->
+
+  <template match="*[contains(concat(' ', @class, ' '), ' glossary ')]//*[@xml:id][not(//@href[starts-with(normalize-space(.), '#')][current()/@xml:id = substring-after(., '#')])]">
+    <copy>
+
+      <apply-templates select="@*"/>
+
+      <!-- Append to @class -->
+
+      <attribute name="class">
+        <value-of select="@class"/> new
+      </attribute>
+
+      <apply-templates select="node()"/>
+
+    </copy>
+  </template>
+
 </stylesheet>
