@@ -81,7 +81,7 @@
 
   <!-- Use substring-before() because neither OpenJDK 6 nor SAXON 9.2 resolve empty strings conformingly, http://thread.gmane.org/gmane.comp.java.openjdk.net.devel/1536, http://thread.gmane.org/gmane.text.xml.saxon.help/11638 -->
 
-  <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()]]">
+  <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()][not(contains(current(), '#')) or substring-after(current(), '#') = @id]]">
     <attribute name="href">
       #<value-of select="replace(replace(resolve-uri(., base-uri()), '.*[/=]', ''), '#', '.')"/>
     </attribute>
