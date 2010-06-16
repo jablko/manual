@@ -7,7 +7,7 @@
     </copy>
   </template>
 
-  <template match="*[starts-with(normalize-space(@href), '#') and not(id(substring-after(@href, '#')))]">
+  <template match="*[starts-with(normalize-space(@href), '#')][not(id(substring-after(@href, '#')))]">
     <copy>
 
       <apply-templates select="@*"/>
