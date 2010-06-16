@@ -107,7 +107,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h4|descendant-or-self::html:h5][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5][1]"/>
 
   </template>
 
@@ -127,7 +127,7 @@
 
     </html:section>
 
-    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4][1]"/>
+    <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4|descendant-or-self::html:h5|descendant-or-self::html:h6][1]"/>
 
   </template>
 
