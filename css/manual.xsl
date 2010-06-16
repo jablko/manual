@@ -79,6 +79,24 @@
     </copy>
   </template>
 
+  <!-- Add @class .new to references included in this document, with a fragment that doesn't exist -->
+
+  <template match="*[contains(@href, '#')][//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()]][not(//*[substring-before(concat(resolve-uri(current()/@href, base-uri(current())), '#'), '#') = base-uri()][substring-after(current()/@href, '#') = @id])]">
+    <copy>
+
+      <apply-templates select="@*"/>
+
+      <!-- Append to @class -->
+
+      <attribute name="class">
+        <value-of select="@class"/> new
+      </attribute>
+
+      <apply-templates select="node()"/>
+
+    </copy>
+  </template>
+
   <!-- Use substring-before() because neither OpenJDK 6 nor SAXON 9.2 resolve empty strings conformingly, http://thread.gmane.org/gmane.comp.java.openjdk.net.devel/1536, http://thread.gmane.org/gmane.text.xml.saxon.help/11638 -->
 
   <template match="@href[//*[substring-before(concat(resolve-uri(current(), base-uri(current())), '#'), '#') = base-uri()][not(contains(current(), '#')) or substring-after(current(), '#') = @id]]">
