@@ -15,7 +15,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -33,7 +35,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -51,7 +55,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -69,7 +75,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -87,7 +95,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -105,7 +115,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -118,6 +130,8 @@
     <apply-templates select="following-sibling::*[descendant-or-self::html:h1|descendant-or-self::html:h2|descendant-or-self::html:h3|descendant-or-self::html:h4][1]"/>
 
   </template>
+
+  <template match="*[self::html:h1|self::html:h2|self::html:h3|self::html:h4|self::html:h5|self::html:h6]/@id"/>
 
   <!-- h1 -->
 
@@ -137,7 +151,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -155,7 +171,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -173,7 +191,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -191,7 +211,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -209,7 +231,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -241,7 +265,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -259,7 +285,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -277,7 +305,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -295,7 +325,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -327,7 +359,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -345,7 +379,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -363,7 +399,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -395,7 +433,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -413,7 +453,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
@@ -445,7 +487,9 @@
 
     <html:section>
 
-      <apply-templates select="@id"/>
+      <attribute name="id">
+        <value-of select="@id"/>
+      </attribute>
 
       <copy>
         <apply-templates select="@*|node()[1]"/>
