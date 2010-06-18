@@ -17,9 +17,7 @@ h5,
 h6
 {
   display: block;
-  font-family: Anivers, sans-serif;
   font-size: 24pt;
-  font-weight: normal;
   margin: 1in 0;
 }
 
@@ -82,6 +80,7 @@ section section h4,
 section section h5,
 section section h6
 {
+  color: #069;
   font-size: 18pt;
   margin: 1em 0;
 }
