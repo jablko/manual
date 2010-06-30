@@ -74,9 +74,18 @@ body
   margin: 0;
 }
 
-h1
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.contributors .firstHeading,
+.contributors .mw-headline,
+.table-of-contents .firstHeading,
+.table-of-contents .mw-headline
 {
-  string-set: chapter content();
+  prince-bookmark-level: none;
 }
 
 ol,
@@ -107,50 +116,30 @@ section section
   page-break-before: auto;
 }
 
-section section h,
-section section h1,
-section section h2,
-section section h3,
-section section h4,
-section section h5,
-section section h6
+section section .firstHeading,
+section section .mw-headline
 {
   prince-bookmark-level: 2;
 
-  /* Reset h1 */
+  /* Reset .firstHeading, .mw-headline */
 
   string-set: none;
 }
 
-section section section h,
-section section section h1,
-section section section h2,
-section section section h3,
-section section section h4,
-section section section h5,
-section section section h6
+section section section .firstHeading,
+section section section .mw-headline
 {
   prince-bookmark-level: 3;
 }
 
-section section section section h,
-section section section section h1,
-section section section section h2,
-section section section section h3,
-section section section section h4,
-section section section section h5,
-section section section section h6
+section section section section .firstHeading,
+section section section section .mw-headline
 {
   prince-bookmark-level: 4;
 }
 
-section section section section section h,
-section section section section section h1,
-section section section section section h2,
-section section section section section h3,
-section section section section section h4,
-section section section section section h5,
-section section section section section h6
+section section section section section .firstHeading,
+section section section section section .mw-headline
 {
   prince-bookmark-level: 5;
 }
@@ -160,15 +149,11 @@ section section section section section h6
   page: contributors;
 }
 
-.contributors h,
-.contributors h1,
-.contributors h2,
-.contributors h3,
-.contributors h4,
-.contributors h5,
-.contributors h6
+.firstHeading,
+.mw-headline
 {
-  prince-bookmark-level: none;
+  prince-bookmark-level: 1;
+  string-set: chapter content();
 }
 
 .front-cover
